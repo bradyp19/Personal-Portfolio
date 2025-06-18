@@ -65,7 +65,7 @@ const projects = [
   {
     id: 4,
     title: 'Market Intelligence Agent',
-    description: 'Built for my Strategy internship, the project turns product news into actionable insights—automatically. An automated Python agent that scrapes, summarizes, and formats product announcements from top AI/BI vendors. With feature extraction, theme grouping, and markdown export, it\'s built for market intelligence posts that keep teams up to speed—minus the manual work.',
+    description: 'Built for my Strategy internship, the project turns product news into actionable insights automatically. An automated Python agent that scrapes, summarizes, and formats product announcements from top AI/BI vendors. With feature extraction, theme grouping, and markdown export, it\'s built for market intelligence posts that keep teams up to speed—minus the manual work.',
     subtitle: 'Automated product news intelligence agent',
     tech: ['Python', 'Web Scraping', 'NLP', 'Automation', 'Data Analysis'],
     category: 'AI/ML',
@@ -75,20 +75,19 @@ const projects = [
   {
     id: 5,
     title: 'Personal Portfolio',
-    description: 'A living sandbox for design, code, and storytelling. More than a portfolio—this site is where I experiment with new ideas, rethink my story, and push my skills in React, Tailwind, and product design. Every update is part late-night experiment, part reflection on how I build and share work.',
+    description: 'A living sandbox for design, code, and storytelling. More than a portfolio, this site is where I experiment with new ideas, rethink my story, and push my skills in React, Tailwind, and product design. Every update is part late-night experiment, part reflection on how I build and share work.',
     subtitle: 'Living sandbox for design and development',
     tech: ['React', 'Next.js', 'Tailwind CSS', 'TypeScript', 'Framer Motion'],
     category: 'Development',
     github: 'https://github.com/bradyp19/personal-portfolio'
-  },
-  {
+  },  {
     id: 6,
     title: 'Ouroboros',
     description: 'A multimedia meditation on cycles and renewal, filmed at Morven Field. Created with Adobe Express Suite, Ouroboros weaves together video, photography, and sound to explore how endings feed new beginnings. The looping, arching tree at its center echoes the eternal return of nature—an invitation to see how every stillness is just part of a larger cycle.',
     subtitle: 'Multimedia meditation on cycles and renewal',
     tech: ['Adobe Express Suite', 'Video Production', 'Photography', 'Sound Design'],
     category: 'Creative',
-    github: '#',
+    github: 'https://drive.google.com/file/d/1wxUD_flf0ClRwm5Y4BftPSBpgpQNGZbu/view?usp=drivesdk',
     image: '/previews/ourosboros.png'
   }
 ]
@@ -1056,14 +1055,13 @@ export default function HomePage() {
               Where curiosity meets Celsius & questionable sleep schedules.
             </p>
           </motion.div>          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project, index) => (
-                <motion.div
+            {projects.map((project, index) => (                <motion.div
                 key={project.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={projectsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
-                >                <div className="relative h-48 bg-gray-100 dark:bg-gray-700 overflow-hidden">
+                className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full"
+                ><div className="relative h-48 bg-gray-100 dark:bg-gray-700 overflow-hidden">
                   {project.image ? (
                     <Image
                       src={project.image}
@@ -1086,35 +1084,45 @@ export default function HomePage() {
                       {project.category}
                     </span>
                   </div>
-                </div>
-                <div className="p-4">
+                </div>                <div className="p-4 flex flex-col h-full">
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">{project.title}</h3>
                   {project.subtitle && (
-                  <p className="text-blue-600 dark:text-blue-400 font-medium mb-2 text-sm">{project.subtitle}</p>
+                    <p className="text-blue-600 dark:text-blue-400 font-medium mb-2 text-sm">{project.subtitle}</p>
                   )}
-                  <p className="text-gray-600 dark:text-gray-400 mb-3 leading-relaxed text-sm line-clamp-4">
-                  {project.description.length > 150 ? project.description.substring(0, 150) + '...' : project.description}
+                  <p className="text-gray-600 dark:text-gray-400 mb-3 leading-relaxed text-sm line-clamp-4 flex-grow">
+                    {project.description.length > 150 ? project.description.substring(0, 150) + '...' : project.description}
                   </p>
                   
                   <div className="flex flex-wrap gap-1 mb-4">
-                  {project.tech.slice(0, 4).map((tech) => (
-                    <span key={tech} className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded text-xs">
-                    {tech}
-                    </span>
-                  ))}
-                  {project.tech.length > 4 && (
-                    <span className="text-gray-500 dark:text-gray-400 text-xs">+{project.tech.length - 4} more</span>
-                  )}
+                    {project.tech.slice(0, 4).map((tech) => (
+                      <span key={tech} className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded text-xs">
+                        {tech}
+                      </span>
+                    ))}
+                    {project.tech.length > 4 && (
+                      <span className="text-gray-500 dark:text-gray-400 text-xs">+{project.tech.length - 4} more</span>
+                    )}
                   </div>
                   
-                  <div className="flex justify-center">
-                  <a
-                    href={project.github}
-                    className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-xs font-medium flex items-center justify-center"
-                  >
-                    <FiGithub className="w-3 h-3 mr-1" />
-                    {project.github === '#' ? 'Coming Soon' : 'View on GitHub'}
-                  </a>
+                  <div className="flex justify-center mt-auto">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-xs font-medium flex items-center justify-center w-full max-w-[200px] h-10"
+                    >
+                      {project.title === 'Ouroboros' ? (
+                        <>
+                          <FiExternalLink className="w-3 h-3 mr-1" />
+                          View Project
+                        </>
+                      ) : (
+                        <>
+                          <FiGithub className="w-3 h-3 mr-1" />
+                          {project.github === '#' ? 'Coming Soon' : 'View on GitHub'}
+                        </>
+                      )}
+                    </a>
                   </div>
                 </div>
                 </motion.div>
