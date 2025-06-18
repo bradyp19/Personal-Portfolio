@@ -133,6 +133,29 @@ const achievements = [
   }
 ]
 
+const featureCards = [
+  {
+    title: 'Mission-Driven',
+    description: 'Focused on creating meaningful impact through innovative solutions',
+    icon: '/icons/strategy.svg'
+  },
+  {
+    title: 'Team Player',
+    description: 'Collaborative mindset with a focus on elevating the entire team',
+    icon: '/icons/puzzle.svg'
+  },
+  {
+    title: 'Continuous Learning',
+    description: 'Constantly expanding knowledge and embracing new challenges',
+    icon: '/icons/book.svg'
+  },
+  {
+    title: 'Passionate',
+    description: 'Deeply committed to excellence in every endeavor',
+    icon: '/icons/knight.svg'
+  }
+]
+
 export default function HomePage() {
   const [darkMode, setDarkMode] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -146,6 +169,7 @@ export default function HomePage() {
   // Intersection observers for animations
   const [heroRef, heroInView] = useInView({ threshold: 0.1, triggerOnce: true })
   const [aboutRef, aboutInView] = useInView({ threshold: 0.1, triggerOnce: true })
+  const [achievementsRef, achievementsInView] = useInView({ threshold: 0.1, triggerOnce: true })
   const [affiliatedRef, affiliatedInView] = useInView({ threshold: 0.1, triggerOnce: true })
   const [experienceRef, experienceInView] = useInView({ threshold: 0.1, triggerOnce: true })
   const [projectsRef, projectsInView] = useInView({ threshold: 0.1, triggerOnce: true })
@@ -424,12 +448,12 @@ export default function HomePage() {
                   },
                   {
                     title: 'Experience',
-                    subtitle: 'Work, leadership, and growth',
+                    subtitle: 'Professional journey and roles',
                     icon: '/icons/graduation.svg'
                   },
                   {
                     title: 'Projects',
-                    subtitle: 'End-to-end product & tech builds',
+                    subtitle: 'Solo and team product developments',
                     icon: '/icons/laptop.svg'
                   },
                   {
@@ -680,109 +704,160 @@ export default function HomePage() {
             className="text-center mb-16"
           >            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">About Me</h2>            <div className="relative">
               <p className="text-xl text-gray-600 dark:text-gray-400 max-w-4xl mx-auto">
-                My journey is driven by the belief that technology should solve real problems.
+                Always asking, never settling, building what’s next.
               </p>
-              {/* Left puzzle accent */}
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={aboutInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.8, delay: 0.4, ease: [0.23, 1, 0.32, 1] }}
-                whileHover={{ scale: 1.1, rotate: -15 }}
-                className="absolute -top-6 -left-8 lg:-left-12"
-              >
-                <div className="relative">
-                  {/* Soft glow effect */}
-                  <div className="absolute inset-0 bg-blue-200/20 dark:bg-blue-400/10 rounded-full blur-md transform scale-150"></div>
-                  {/* Icon */}
-                  <Image 
-                    src="/icons/puzzle.svg"
-                    alt="Puzzle piece accent"
-                    width={40}
-                    height={40}                    className="relative transform -rotate-12 opacity-25 dark:opacity-15 hover:opacity-40 dark:hover:opacity-25 transition-all duration-300"
-                    style={{ 
-                      filter: 'grayscale(0.6) brightness(1.1) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.08))'
-                    }}
-                  />
-                </div>
-              </motion.div>
-              {/* Right puzzle accent */}
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={aboutInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.8, delay: 0.6, ease: [0.23, 1, 0.32, 1] }}
-                whileHover={{ scale: 1.1, rotate: 15 }}
-                className="absolute -top-6 -right-8 lg:-right-12"
-              >
-                <div className="relative">
-                  {/* Soft glow effect */}
-                  <div className="absolute inset-0 bg-blue-200/20 dark:bg-blue-400/10 rounded-full blur-md transform scale-150"></div>
-                  {/* Icon */}
-                  <Image 
-                    src="/icons/puzzle.svg"
-                    alt="Puzzle piece accent"
-                    width={40}
-                    height={40}
-                    className="relative transform rotate-12 opacity-25 dark:opacity-15 hover:opacity-40 dark:hover:opacity-25 transition-all duration-300"
-                    style={{ 
-                      filter: 'grayscale(0.6) brightness(1.1) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.08))'
-                    }}
-                  />
-                </div>
-              </motion.div>
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-start">
+            {/* Story Content */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={aboutInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
+              className="lg:col-span-2 space-y-8"
             >
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">My Story</h3>
-              <div className="space-y-4 text-gray-600 dark:text-gray-400">
-                <p>
-                  Born in South Korea, I immigrated to the United States with a dream and determination to make an impact. 
-                  Through hard work and perseverance, I earned a full-ride scholarship to the University of Virginia.
-                </p>
-                <p>
-                  Today, I bridge the gap between technical innovation and business strategy, building products that scale 
-                  and solve real-world problems. My experience spans from AI/ML implementations to full-stack development.
-                </p>
-                <p>
-                  I believe in the power of technology to create positive change, and I'm passionate about mentoring others 
-                  who share this vision.
+              {/* Origins */}
+              <div>
+                <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-3 flex items-center">
+                  <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mr-3"></div>
+                  Origins
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                  I was always that kid asking too many questions in class, pulling things apart just to see how they worked. 
+                  I discovered Scratch at the age of 10 and it was game over for me. By the time I finished elementary school, 
+                  I had built multiple games that hit the front page, racking up 70,000 plays and 20,000 favorites.
                 </p>
               </div>
-            </motion.div>            <motion.div
+
+              {/* Challenges */}
+              <div>
+                <h3 className="text-xl font-semibold text-amber-600 dark:text-amber-400 mb-3 flex items-center">
+                  <div className="w-2 h-2 bg-amber-600 dark:bg-amber-400 rounded-full mr-3"></div>
+                  Challenges
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                  Growing up in a single-mother household with an autistic brother, I learned early how to adapt and take on 
+                  responsibility. I didn't always have the time or resources to dive deep into my passions, but it taught me to 
+                  be scrappy, empathetic, and resourceful.
+                </p>
+              </div>
+
+              {/* Today */}
+              <div>
+                <h3 className="text-xl font-semibold text-emerald-600 dark:text-emerald-400 mb-3 flex items-center">
+                  <div className="w-2 h-2 bg-emerald-600 dark:bg-emerald-400 rounded-full mr-3"></div>
+                  Today
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                  Earning a full-ride scholarship to UVA opened the doors. There, I realized my love for tech was matched by my 
+                  love for people, connecting dots between ideas and the humans behind them. I am driven by both the "how" and the 
+                  "why," blending business strategy with hands-on software execution.
+                </p>
+              </div>              {/* Inspirational Quote */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={aboutInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-6 border-l-4 border-blue-500"
+              >
+                <blockquote className="text-lg italic text-gray-700 dark:text-gray-300 mb-2">
+                  "No one knows what the future holds. That's why its potential is infinite."
+                </blockquote>
+                <cite className="text-sm text-gray-500 dark:text-gray-400">— Rintarou Okabe, Steins;Gate</cite>
+              </motion.div>
+            </motion.div>            {/* Photo Space */}
+            <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={aboutInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="grid grid-cols-2 gap-4"
-            >
-              {[
-                { icon: Target, label: "Mission-Driven", value: "Impact First" },
-                { icon: Users, label: "Team Player", value: "Collaborative" },
-                { icon: BookOpen, label: "Continuous Learning", value: "Growth Mindset" },
-                { icon: Heart, label: "Passionate", value: "About Technology" }
-              ].map((item, index) => {
-                const IconComponent = item.icon
-                return (
-                  <div key={index} className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg text-center">
-                    <div className="text-blue-600 dark:text-blue-400 mb-3 flex justify-center">
-                      <IconComponent className="w-8 h-8" />
-                    </div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1">{item.label}</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{item.value}</p>
-                  </div>
-                )
-              })}
+              className="lg:col-span-1 flex flex-col items-center"
+            >              {/* Photo placeholder - ready for joelgrad.jpg */}              <div className="w-96 h-[480px] bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-700 dark:to-gray-600 rounded-3xl overflow-hidden shadow-xl">
+                <Image
+                  src="/joelgrad.jpg"
+                  alt="Brady's graduation photo"
+                  width={480}
+                  height={600}
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </motion.div>
           </div>
+        </div>
+      </section>      {/* Achievements Section */}
+      <section id="achievements" ref={achievementsRef} className="py-20 bg-white dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={achievementsInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Achievements</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              Recognition and milestones that reflect my commitment to excellence and impact.
+            </p>
+          </motion.div>
+
+          {/* Achievement Cards */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={achievementsInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
+          >
+            {achievements.map((achievement, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={achievementsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <Trophy className="w-12 h-12 text-yellow-500 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{achievement.title}</h3>
+                <p className="text-blue-600 dark:text-blue-400 font-semibold mb-2">{achievement.organization}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">{achievement.year}</p>
+                <p className="text-gray-700 dark:text-gray-300">{achievement.description}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Feature Cards */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={achievementsInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="grid grid-cols-2 lg:grid-cols-4 gap-6"
+          >
+            {featureCards.map((card, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={achievementsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-center"
+              >
+                <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Image
+                    src={card.icon}
+                    alt={`${card.title} icon`}
+                    width={32}
+                    height={32}
+                    className="opacity-70 dark:opacity-90"
+                    style={{ filter: 'grayscale(0.2)' }}
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{card.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400">{card.description}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
       {/* Experience Section */}
-      <section id="experience" ref={experienceRef} className="py-20 bg-white dark:bg-gray-900">
+      <section id="experience" ref={experienceRef} className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -792,7 +867,7 @@ export default function HomePage() {
           >
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Experience</h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">
-              A journey of growth, leadership, and impact
+              Building impactful solutions across diverse environments
             </p>
           </motion.div>
 
@@ -803,125 +878,34 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={experienceInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+                className="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{exp.title}</h3>
-                    <p className="text-lg text-blue-600 dark:text-blue-400 font-semibold">{exp.company}</p>
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{exp.title}</h3>
+                    <p className="text-xl text-blue-600 dark:text-blue-400 font-semibold">{exp.company}</p>
                   </div>
-                  <div className="flex items-center text-gray-600 dark:text-gray-400 mt-2 md:mt-0">
-                    <Calendar className="w-4 h-4 mr-2" />
-                    <span className="mr-4">{exp.period}</span>
-                    <MapPin className="w-4 h-4 mr-2" />
-                    <span>{exp.location}</span>
-                  </div>
-                </div>
-                <p className="text-gray-600 dark:text-gray-400 mb-6">{exp.description}</p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {exp.achievements.map((achievement, i) => (
-                    <div key={i} className="flex items-center">
-                      <Star className="w-4 h-4 text-yellow-500 mr-2" />
-                      <span className="text-sm text-gray-700 dark:text-gray-300">{achievement}</span>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" ref={projectsRef} className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={projectsInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Featured Projects</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
-              End-to-end solutions that blend innovation with impact
-            </p>
-            
-            {/* Project Filter */}
-            <div className="flex justify-center mb-8">
-              <div className="inline-flex bg-white dark:bg-gray-900 rounded-lg p-1 shadow-lg">
-                {['All', 'AI/ML', 'Web Development', 'Data Science'].map((filter) => (
-                  <button
-                    key={filter}
-                    onClick={() => setSelectedFilter(filter)}
-                    className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                      selectedFilter === filter
-                        ? 'bg-blue-600 text-white'
-                        : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
-                    }`}
-                  >
-                    {filter}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={projectsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
-              >
-                <div className="relative h-48 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900">
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <FiCode className="w-16 h-16 text-white" />
-                  </div>
-                  <div className="absolute top-4 right-4">
-                    <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
-                      {project.category}
+                  <div className="flex flex-col md:items-end mt-4 md:mt-0">
+                    <span className="text-gray-600 dark:text-gray-400 font-medium">{exp.period}</span>
+                    <span className="text-gray-500 dark:text-gray-500 text-sm flex items-center mt-1">
+                      <MapPin className="w-4 h-4 mr-1" />
+                      {exp.location}
                     </span>
                   </div>
                 </div>
                 
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{project.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((tech, i) => (
-                      <span key={i} className="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-2 py-1 rounded text-xs">
-                        {tech}
-                      </span>
+                <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">{exp.description}</p>
+                
+                <div className="space-y-2">
+                  <h4 className="font-semibold text-gray-900 dark:text-white mb-3">Key Achievements:</h4>
+                  <ul className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    {exp.achievements.map((achievement, achIndex) => (
+                      <li key={achIndex} className="flex items-start">
+                        <Star className="w-4 h-4 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-600 dark:text-gray-400 text-sm">{achievement}</span>
+                      </li>
                     ))}
-                  </div>
-                  
-                  <div className="grid grid-cols-3 gap-4 mb-6 text-center">
-                    {Object.entries(project.metrics).map(([key, value], i) => (
-                      <div key={i}>
-                        <div className="text-lg font-bold text-blue-600 dark:text-blue-400">{value}</div>
-                        <div className="text-xs text-gray-500 dark:text-gray-400 capitalize">{key}</div>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  <div className="flex space-x-3">
-                    <a
-                      href={project.demo}
-                      className="flex-1 bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm font-semibold"
-                    >
-                      Live Demo
-                    </a>
-                    <a
-                      href={project.github}
-                      className="flex-1 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-center py-2 rounded-lg hover:border-gray-400 dark:hover:border-gray-500 transition-colors text-sm font-semibold"
-                    >
-                      Code
-                    </a>
-                  </div>
+                  </ul>
                 </div>
               </motion.div>
             ))}
@@ -940,107 +924,120 @@ export default function HomePage() {
           >
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Skills & Expertise</h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">
-              A comprehensive toolkit for building impactful solutions
+              Comprehensive skill set spanning technical depth and strategic thinking
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {skills.map((skill, index) => (
               <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                animate={skillsInView ? { opacity: 1, x: 0 } : {}}
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={skillsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-lg"
+                className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
               >
-                <div className="flex justify-between items-center mb-2">
+                <div className="flex justify-between items-center mb-4">
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{skill.name}</h3>
-                  <span className="text-sm text-gray-600 dark:text-gray-400">{skill.category}</span>
+                  <span className="text-sm text-blue-600 dark:text-blue-400 font-medium">{skill.category}</span>
                 </div>
-                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 mb-2">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={skillsInView ? { width: `${skill.level}%` } : {}}
-                    transition={{ duration: 1, delay: index * 0.1 }}
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 h-3 rounded-full"
-                  />
+                
+                <div className="mb-2">
+                  <div className="flex justify-between text-sm text-gray-600 dark:text-gray-400 mb-1">
+                    <span>Proficiency</span>
+                    <span>{skill.level}%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                    <motion.div
+                      initial={{ width: 0 }}
+                      animate={skillsInView ? { width: `${skill.level}%` } : {}}
+                      transition={{ duration: 1, delay: index * 0.1 }}
+                      className="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full"
+                    />
+                  </div>
                 </div>
-                <div className="text-right text-sm text-gray-600 dark:text-gray-400">{skill.level}%</div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section ref={testimonialsRef} className="py-20 bg-gray-50 dark:bg-gray-800">
+      {/* Projects Section */}
+      <section id="projects" ref={projectsRef} className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={testimonialsInView ? { opacity: 1, y: 0 } : {}}
+            animate={projectsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">What People Say</h2>
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Featured Projects</h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">
-              Feedback from colleagues and mentors
+              End-to-end solutions that blend technical innovation with real-world impact
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {testimonials.map((testimonial, index) => (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {projects.map((project, index) => (
               <motion.div
-                key={index}
+                key={project.id}
                 initial={{ opacity: 0, y: 20 }}
-                animate={testimonialsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-lg"
-              >
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full flex items-center justify-center text-white font-bold">
-                    {testimonial.name.charAt(0)}
-                  </div>
-                  <div className="ml-4">
-                    <h4 className="font-semibold text-gray-900 dark:text-white">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role} at {testimonial.company}</p>
-                  </div>
-                </div>
-                <p className="text-gray-700 dark:text-gray-300 italic">"{testimonial.content}"</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Achievements Section */}
-      <section className="py-20 bg-white dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Achievements</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
-              Recognition and milestones along the journey
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {achievements.map((achievement, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                animate={projectsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow"
+                className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <Trophy className="w-12 h-12 text-yellow-500 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{achievement.title}</h3>
-                <p className="text-blue-600 dark:text-blue-400 font-semibold mb-2">{achievement.organization}</p>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">{achievement.year}</p>
-                <p className="text-gray-700 dark:text-gray-300">{achievement.description}</p>
+                <div className="relative h-48 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-gray-700 dark:to-gray-600">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center">
+                      <FiCode className="w-12 h-12 text-blue-600 dark:text-blue-400 mx-auto mb-2" />
+                      <span className="text-sm text-gray-600 dark:text-gray-400">Project Preview</span>
+                    </div>
+                  </div>
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      {project.category}
+                    </span>
+                  </div>
+                </div>
+                
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{project.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">{project.description}</p>
+                  
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tech.map((tech, techIndex) => (
+                      <span key={techIndex} className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-lg text-sm">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <div className="grid grid-cols-3 gap-4 mb-6 text-center">
+                    {Object.entries(project.metrics).map(([key, value], metricIndex) => (
+                      <div key={metricIndex}>
+                        <div className="text-lg font-bold text-blue-600 dark:text-blue-400">{value}</div>
+                        <div className="text-xs text-gray-500 dark:text-gray-400 capitalize">{key}</div>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <div className="flex space-x-4">
+                    <a
+                      href={project.demo}
+                      className="flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-center text-sm font-medium flex items-center justify-center"
+                    >
+                      <FiExternalLink className="w-4 h-4 mr-2" />
+                      Live Demo
+                    </a>
+                    <a
+                      href={project.github}
+                      className="flex-1 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 py-2 px-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-center text-sm font-medium flex items-center justify-center"
+                    >
+                      <FiGithub className="w-4 h-4 mr-2" />
+                      Code
+                    </a>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
