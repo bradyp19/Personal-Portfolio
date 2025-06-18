@@ -184,13 +184,27 @@ export default function HomePage() {
       {/* Fixed Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <motion.div
+          <div className="flex justify-between items-center h-16">            <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="font-bold text-xl text-gray-900 dark:text-white"
+              className="font-bold text-xl text-gray-900 dark:text-white flex items-center"
             >
-              Brady Park
+              <span className="mr-2.5">Brady Park</span>
+              <motion.div
+                initial={{ opacity: 0.8, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                whileHover={{ scale: 1.1, rotate: 10 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Image 
+                  src="/icons/southkoreacircle.svg"
+                  alt="South Korea"
+                  width={20}
+                  height={20}
+                  className="w-5 h-5 object-contain opacity-90 hover:opacity-100 transition-opacity"
+                  style={{ filter: 'drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1))' }}
+                />
+              </motion.div>
             </motion.div>
             
             {/* Desktop Navigation */}
@@ -301,47 +315,93 @@ export default function HomePage() {
                   fill="url(#heroGradient)"
                 />
               </svg>
-            </div>
-
-            {/* Main Content */}
-            <div className="relative z-10 text-center">
+            </div>            {/* Main Content */}
+            <div className="relative z-10 text-center px-8">
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={heroInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="text-5xl font-bold text-gray-900 dark:text-white mb-6"
+                className="text-5xl font-bold text-gray-900 dark:text-white mb-8"
+                style={{ 
+                  textShadow: '0 2px 4px rgba(0, 0, 0, 0.05)', 
+                  filter: 'drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1))' 
+                }}
               >
-                Brady Park
+                Brady William Park
               </motion.h1>
               
-              <motion.h2
+              <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={heroInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="text-2xl font-medium text-gray-700 dark:text-gray-300 mb-8"
-              >
-                Product Strategy meets Technical Execution
-              </motion.h2>
+                className="mt-6 mb-10"
+              >                <div className="flex items-center justify-center gap-4 mb-4">
+                  {/* Left Knight Icon */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
+                    className="flex items-center"
+                  >
+                    <div className="relative flex items-center justify-center">
+                      <Image
+                        src="/icons/knight.svg"
+                        alt="Knight icon"
+                        width={25}
+                        height={25}
+                        className="object-contain opacity-70 dark:opacity-60"
+                        style={{ filter: 'grayscale(1)' }}
+                      />
+                    </div>
+                  </motion.div>
+
+                  {/* Text Content */}
+                  <h2 className="text-2xl font-medium text-gray-600 dark:text-gray-400">
+                     Product Strategy meets Technical Execution
+                  </h2>
+
+                  {/* Right Rocket Icon */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
+                    className="flex items-center"
+                  >
+                    <div className="relative flex items-center justify-center">                      <Image 
+                        src="/icons/rocket.svg"
+                        alt="Rocket icon"
+                        width={30}
+                        height={30}
+                        className="object-contain opacity-70 dark:opacity-60"
+                        style={{ filter: 'grayscale(1)' }}
+                      />
+                    </div>
+                  </motion.div>
+                </div>
+                {/* Enhanced accent underline with gradient */}
+                <div className="relative h-1 mx-auto" style={{ width: 'calc(100% - 8rem)' }}>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-600/90 to-transparent dark:via-blue-400/90 rounded-full"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-600/30 to-transparent dark:via-blue-400/30 rounded-full blur-sm transform translate-y-1"></div>
+                </div>
+              </motion.div>
 
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
                 animate={heroInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.7 }}
-                className="text-lg text-blue-600 dark:text-blue-400 font-medium mb-6 leading-relaxed"
+                className="text-lg text-blue-600 dark:text-blue-400 font-medium mb-8 leading-relaxed"
               >
-                Self-made immigrant turned full-ride QuestBridge & Echols Scholar at UVA, now supporting AI-driven, full-stack solutions.
+                Self-made immigrant turned full-ride CS scholar at UVA, now supporting AI & data-driven solutions.
               </motion.p>
 
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
                 animate={heroInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.8 }}
-                className="text-base italic text-gray-600 dark:text-gray-400 mb-12"
+                className="text-base italic text-gray-600 dark:text-gray-400 mb-20"
               >
                 I build scalable products that blend data, design, and real-world impact.
-              </motion.p>
-
-              {/* Feature Grid */}
+              </motion.p>              {/* Feature Grid */}
               <motion.div
                 initial="hidden"
                 animate={heroInView ? "visible" : "hidden"}
@@ -355,24 +415,27 @@ export default function HomePage() {
                     }
                   }
                 }}
-                className="grid grid-cols-2 gap-6 max-w-lg mx-auto"
-              >
-                {[
+                className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8 max-w-3xl mx-auto px-4"
+              >                {[
                   {
                     title: 'About',
-                    subtitle: 'Personal background and vision'
+                    subtitle: 'Personal background and vision',
+                    icon: '/icons/book.svg'
                   },
                   {
                     title: 'Experience',
-                    subtitle: 'Work, leadership, and growth'
+                    subtitle: 'Work, leadership, and growth',
+                    icon: '/icons/graduation.svg'
                   },
                   {
                     title: 'Projects',
-                    subtitle: 'End-to-end product & tech builds'
+                    subtitle: 'End-to-end product & tech builds',
+                    icon: '/icons/laptop.svg'
                   },
                   {
                     title: 'Achievements',
-                    subtitle: 'Awards and recognition'
+                    subtitle: 'Awards and recognition',
+                    icon: '/icons/medal.svg'
                   }
                 ].map((card, idx) => (
                   <motion.div
@@ -388,16 +451,31 @@ export default function HomePage() {
                           ease: [0.22, 1, 0.36, 1]
                         }
                       }
-                    }}
-                    whileHover={{ scale: 1.05, y: -5 }}
-                    className="bg-gray-50/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-xl p-6 cursor-pointer transition-all duration-300"
-                  >
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
-                      {card.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                      {card.subtitle}
-                    </p>
+                    }}                    whileHover={{ scale: 1.03, y: -3 }}
+                    className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-md rounded-2xl shadow-md hover:shadow-xl p-8 cursor-pointer transition-all duration-300 border border-gray-100/50 dark:border-gray-700/50 hover:border-blue-200/50 dark:hover:border-blue-700/50"
+                  >                    {/* Card Header with Icon Space */}
+                    <div className="flex items-start gap-4 mb-6">                      {/* Icon */}
+                      <div className="w-10 h-10 mt-1 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <Image 
+                          src={card.icon}
+                          alt={`${card.title} icon`}
+                          width={28}
+                          height={28}
+                          className="opacity-70 dark:opacity-90"
+                          style={{ filter: 'grayscale(0.2)' }}
+                        />
+                      </div>
+                      
+                      {/* Card Content */}
+                      <div className="flex-1">
+                        <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3 leading-tight">
+                          {card.title}
+                        </h3>
+                        <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+                          {card.subtitle}
+                        </p>
+                      </div>
+                    </div>
                   </motion.div>
                 ))}
               </motion.div>
@@ -492,21 +570,166 @@ export default function HomePage() {
             </motion.div>
           </div>
         </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" ref={aboutRef} className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      </section>      {/* About Section */}
+      <section id="about" ref={aboutRef} className="py-20 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">        {/* Decorative Background Pattern - Puzzle & Gears */}
+        <div className="absolute inset-0 pointer-events-none">          {/* Top Row */}
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="absolute top-12 left-16 opacity-25 dark:opacity-15"
+          >
+            <Image src="/icons/gears2.svg" alt="" width={45} height={45} />
+          </motion.div>
+          
+          <motion.div
+            animate={{ rotate: -360 }}
+            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+            className="absolute top-20 left-1/3 opacity-25 dark:opacity-15"
+          >
+            <Image src="/icons/puzzle.svg" alt="" width={35} height={35} />
+          </motion.div>
+          
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            className="absolute top-16 right-1/4 opacity-25 dark:opacity-15"
+          >
+            <Image src="/icons/gears2.svg" alt="" width={40} height={40} />
+          </motion.div>
+          
+          <motion.div
+            animate={{ rotate: -360 }}
+            transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+            className="absolute top-24 right-12 opacity-25 dark:opacity-15"
+          >
+            <Image src="/icons/puzzle.svg" alt="" width={50} height={50} />
+          </motion.div>
+          
+          {/* Middle Row */}
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
+            className="absolute top-1/2 left-8 opacity-25 dark:opacity-15"
+          >
+            <Image src="/icons/puzzle.svg" alt="" width={38} height={38} />
+          </motion.div>
+          
+          <motion.div
+            animate={{ rotate: -360 }}
+            transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 opacity-25 dark:opacity-15"
+          >
+            <Image src="/icons/gears2.svg" alt="" width={32} height={32} />
+          </motion.div>
+          
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+            className="absolute top-1/2 right-16 opacity-25 dark:opacity-15"
+          >
+            <Image src="/icons/puzzle.svg" alt="" width={42} height={42} />
+          </motion.div>
+            {/* Bottom Row */}
+          <motion.div
+            animate={{ rotate: -360 }}
+            transition={{ duration: 32, repeat: Infinity, ease: "linear" }}
+            className="absolute bottom-20 left-20 opacity-25 dark:opacity-15"
+          >
+            <Image src="/icons/gears2.svg" alt="" width={48} height={48} />
+          </motion.div>
+          
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 26, repeat: Infinity, ease: "linear" }}
+            className="absolute bottom-16 left-2/3 opacity-25 dark:opacity-15"
+          >
+            <Image src="/icons/puzzle.svg" alt="" width={36} height={36} />
+          </motion.div>
+          
+          <motion.div
+            animate={{ rotate: -360 }}
+            transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
+            className="absolute bottom-24 right-20 opacity-25 dark:opacity-15"
+          >
+            <Image src="/icons/gears2.svg" alt="" width={44} height={44} />
+          </motion.div>
+          
+          {/* Additional scattered elements */}
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+            className="absolute top-1/3 left-1/4 opacity-25 dark:opacity-15"
+          >
+            <Image src="/icons/puzzle.svg" alt="" width={28} height={28} />
+          </motion.div>
+          
+          <motion.div
+            animate={{ rotate: -360 }}
+            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            className="absolute bottom-1/3 right-1/3 opacity-25 dark:opacity-15"
+          >
+            <Image src="/icons/gears2.svg" alt="" width={34} height={34} />
+          </motion.div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={aboutInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">About Me</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              My journey is driven by the belief that technology should solve real problems.
-            </p>
+          >            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">About Me</h2>            <div className="relative">
+              <p className="text-xl text-gray-600 dark:text-gray-400 max-w-4xl mx-auto">
+                My journey is driven by the belief that technology should solve real problems.
+              </p>
+              {/* Left puzzle accent */}
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={aboutInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.8, delay: 0.4, ease: [0.23, 1, 0.32, 1] }}
+                whileHover={{ scale: 1.1, rotate: -15 }}
+                className="absolute -top-6 -left-8 lg:-left-12"
+              >
+                <div className="relative">
+                  {/* Soft glow effect */}
+                  <div className="absolute inset-0 bg-blue-200/20 dark:bg-blue-400/10 rounded-full blur-md transform scale-150"></div>
+                  {/* Icon */}
+                  <Image 
+                    src="/icons/puzzle.svg"
+                    alt="Puzzle piece accent"
+                    width={40}
+                    height={40}                    className="relative transform -rotate-12 opacity-25 dark:opacity-15 hover:opacity-40 dark:hover:opacity-25 transition-all duration-300"
+                    style={{ 
+                      filter: 'grayscale(0.6) brightness(1.1) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.08))'
+                    }}
+                  />
+                </div>
+              </motion.div>
+              {/* Right puzzle accent */}
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={aboutInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.8, delay: 0.6, ease: [0.23, 1, 0.32, 1] }}
+                whileHover={{ scale: 1.1, rotate: 15 }}
+                className="absolute -top-6 -right-8 lg:-right-12"
+              >
+                <div className="relative">
+                  {/* Soft glow effect */}
+                  <div className="absolute inset-0 bg-blue-200/20 dark:bg-blue-400/10 rounded-full blur-md transform scale-150"></div>
+                  {/* Icon */}
+                  <Image 
+                    src="/icons/puzzle.svg"
+                    alt="Puzzle piece accent"
+                    width={40}
+                    height={40}
+                    className="relative transform rotate-12 opacity-25 dark:opacity-15 hover:opacity-40 dark:hover:opacity-25 transition-all duration-300"
+                    style={{ 
+                      filter: 'grayscale(0.6) brightness(1.1) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.08))'
+                    }}
+                  />
+                </div>
+              </motion.div>
+            </div>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
