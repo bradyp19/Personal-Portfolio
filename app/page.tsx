@@ -70,89 +70,136 @@ const projects = [
 
 const experience = [
   {
-    title: 'Product Strategy Intern',
-    company: 'Strategy One (MicroStrategy)',
-    period: 'Summer 2024',
+    title: 'Sales Engineering Intern',
+    company: 'Strategy One (NASDAQ: MSTR)',
+    period: 'June 2025 - Aug 2025',
+    status: 'Incoming',
     location: 'Tysons, VA',
-    description: 'Led product strategy initiatives and cross-functional collaboration',
-    achievements: ['Improved user engagement by 25%', 'Launched 3 new features', 'Led team of 5 developers']
+    description: 'Working with Fortune 500 companies to demonstrate enterprise analytics solutions and build custom proofs-of-concept.',
+    achievements: [
+      'Building custom demos and POCs for clients like Netflix, Visa, and USPS',
+      'Collaborating with AWS and Google engineers on platform integrations',
+      'Demonstrating business value through data analytics solutions'
+    ],
+    logo: '/logos/strategy.svg'
   },
   {
-    title: 'Full-Stack Developer',
-    company: 'TSG',
-    period: '2023 - Present',
+    title: 'Security Engineering Intern',
+    company: 'GuidePoint Security',
+    period: 'Jan 2025 - Apr 2025',
     location: 'Remote',
-    description: 'Built scalable web applications and managed development lifecycle',
-    achievements: ['Deployed 10+ applications', 'Reduced load time by 40%', 'Mentored junior developers']
+    description: 'Built and optimized security operations infrastructure and automation solutions.',
+    achievements: [
+      'Developed simulated SOC environment using Kubernetes and Docker',
+      'Integrated Splunk and automated security log processing',
+      'Improved threat detection efficiency through automation'
+    ],
+    logo: '/logos/guidepoint.png'
   },
   {
-    title: 'Echols Scholar',
-    company: 'University of Virginia',
-    period: '2022 - Present',
+    title: 'Director of Operations',
+    company: 'Technology Strategy Group',
+    period: 'Jan 2025 - Present',
     location: 'Charlottesville, VA',
-    description: 'Full-ride scholarship recipient with focus on Computer Science and Business',
-    achievements: ['Dean\'s List 4 semesters', 'Founded tech club', 'Research publications']
-  }
-]
-
-const testimonials = [
-  {
-    name: 'Sarah Johnson',
-    role: 'Senior Product Manager',
-    company: 'Strategy One',
-    content: 'Brady consistently delivered exceptional results and showed remarkable leadership skills. His technical depth combined with strategic thinking made him invaluable to our team.',
-    avatar: '/testimonials/sarah.jpg'
+    description: 'Scaled student-run tech consulting organization through operational improvements and partnerships.',
+    achievements: [
+      'Implemented JIRA for project management',
+      'Launched new organization website',
+      'Expanded client and consultant base significantly'
+    ],
+    logo: '/logos/tsg.svg'
   },
   {
-    name: 'Michael Chen',
-    role: 'CTO',
-    company: 'TSG',
-    content: 'Working with Brady was transformative for our development process. He brought both innovation and reliability to every project he touched.',
-    avatar: '/testimonials/michael.jpg'
+    title: 'Technology Consultant Intern',
+    company: 'INTEREL',
+    period: 'Dec 2024 - Jan 2025',
+    location: 'Dubai, UAE',
+    description: 'Developed AI-based IoT solutions for the hospitality industry.',
+    achievements: [
+      'Built smart occupancy detection system without hardware dependencies',
+      'Implemented POC in 250-room hotel',
+      'Scaled solution for large-scale deployments'
+    ]
+  },
+  {
+    title: 'Technology Consultant Intern',
+    company: 'Sentiont LLC',
+    period: 'Aug 2024 - Dec 2024',
+    location: 'Remote',
+    description: 'Led AI access control implementations and compliance initiatives.',
+    achievements: [
+      'Launched AI-powered access control systems',
+      'Developed internal compliance dashboard',
+      'Streamlined regulatory compliance processes'
+    ]
+  },
+  {
+    title: 'Data Structures and Algorithms Teaching Assistant',
+    company: 'University of Virginia',
+    period: 'Jan 2024 - Present',
+    location: 'Charlottesville, VA',
+    description: 'Supporting 500+ students in DSA courses through instruction and mentorship.',
+    achievements: [
+      'Lead weekly lab sessions',
+      'Provide one-on-one student mentoring',
+      'Grade and review student code submissions'
+    ],
+    logo: '/logos/uva.svg'
   }
 ]
 
 const achievements = [
   {
-    title: 'Echols Scholar',
-    organization: 'University of Virginia',
+    title: 'Full-ride QuestBridge Match Scholarship',
+    organization: 'Issued by QuestBridge · Dec 2022',
+    associatedOrg: 'University of Virginia',
     year: '2022',
-    description: 'Full-ride merit scholarship awarded to top 5% of incoming students'
+    description: 'Full-ride merit scholarship for low-income students (~1% acceptance rate, 1/15 of UVA Questbridge Match Scholars)',
+    logo: '/logos/questbridge.png',
+    associatedLogo: '/logos/uva.svg',
+    logoStyle: 'prominent'
   },
   {
-    title: 'Hackathon Winner',
-    organization: 'HooHacks 2023',
-    year: '2023',
-    description: 'First place for AI-powered sustainability solution'
-  },
-  {
-    title: 'Dean\'s List',
-    organization: 'UVA School of Engineering',
-    year: '2022-2024',
-    description: 'Consistent academic excellence with 3.8+ GPA'
+    title: '2025 Jihoon Rim Foundation Scholarship',
+    organization: 'Issued by Jihoon Rim Foundation · Feb 2025',
+    associatedOrg: 'Jihoon Rim Foundation',
+    year: '2025',
+    description: '$5,000 scholarship and life-long mentorship from former CEO of Kakao Corp and NYU Stern Prof. Jihoon Rim.',
+    logo: '/logos/jihoon.png',
+    associatedLogo: '/logos/jihoon.png',
+    logoStyle: 'prominent'
   }
 ]
 
 const featureCards = [
   {
-    title: 'Mission-Driven',
-    description: 'Focused on creating meaningful impact through innovative solutions',
-    icon: '/icons/strategy.svg'
+    title: 'Bain x UVA VCO Case Comp Grand Winner',
+    description: 'First place winner among 20+ teams in Bain & Company x UVA Virginia Casing Organization Case Competition',
+    icon: '/icons/strategy.svg',
+    associatedOrg: 'University of Virginia & Bain',
+    associatedLogo: '/logos/uva.svg',
+    secondaryLogo: '/logos/bain.png'
   },
   {
-    title: 'Team Player',
-    description: 'Collaborative mindset with a focus on elevating the entire team',
-    icon: '/icons/puzzle.svg'
+    title: 'Echols Scholar',
+    description: 'Awarded to the top 5% of students at UVA for academic excellence, intellectual curiosity, and leadership potential',
+    icon: '/icons/medal.svg',
+    associatedOrg: 'University of Virginia',
+    associatedLogo: '/logos/uva.svg'
   },
   {
-    title: 'Continuous Learning',
-    description: 'Constantly expanding knowledge and embracing new challenges',
-    icon: '/icons/book.svg'
+    title: 'MetaCTF HooHacks CTF Grand Winner',
+    description: 'Placed 1st in cyber security collegiate CTF among 30+ collegiate teams @ HooHacks open to all 1000 participants of HooHacks at 2025',
+    icon: '/icons/cloud.svg',
+    associatedOrg: 'MetaCTF',
+    associatedLogo: '/logos/metactf.jpg'
   },
   {
-    title: 'Passionate',
-    description: 'Deeply committed to excellence in every endeavor',
-    icon: '/icons/knight.svg'
+    title: 'Catalyst Program Scholar',
+    description: 'Admitted to the selective Catalyst Program at the University of Virginia, ~30% acceptance rate',
+    icon: '/icons/lightbulb.svg',
+    associatedOrg: 'University of Virginia',
+    associatedLogo: '/logos/uva.svg'
   }
 ]
 
@@ -795,7 +842,7 @@ export default function HomePage() {
           >
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Achievements</h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              Recognition and milestones that reflect my commitment to excellence and impact.
+              Boss fights won, levels completed, and badges earned.
             </p>
           </motion.div>
 
@@ -812,12 +859,59 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={achievementsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow"
+                className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow relative overflow-hidden"
               >
+                {achievement.logo && !achievement.showLogoWithAssociation && (
+                  <div className={`absolute top-4 right-4 ${achievement.logoStyle === 'prominent' ? 'opacity-30' : 'opacity-10'}`}>
+                    <Image
+                      src={achievement.logo}
+                      alt="Organization logo"
+                      width={achievement.logoStyle === 'prominent' ? 60 : 40}
+                      height={achievement.logoStyle === 'prominent' ? 60 : 40}
+                      className="object-contain"
+                    />
+                  </div>
+                )}
                 <Trophy className="w-12 h-12 text-yellow-500 mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{achievement.title}</h3>
                 <p className="text-blue-600 dark:text-blue-400 font-semibold mb-2">{achievement.organization}</p>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">{achievement.year}</p>
+                {achievement.associatedOrg && (
+                  <div className="flex flex-col items-center justify-center gap-2 mb-2">
+                    <div className="flex items-center justify-center gap-2">
+                      {achievement.associatedLogo && !achievement.showLogoWithAssociation && (
+                        <Image
+                          src={achievement.associatedLogo}
+                          alt={`${achievement.associatedOrg} logo`}
+                          width={20}
+                          height={20}
+                          className="opacity-70"
+                        />
+                      )}
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        Associated with {achievement.associatedOrg}
+                      </p>
+                    </div>
+                    {achievement.showLogoWithAssociation && achievement.logo && (
+                      <div className="flex items-center justify-center gap-2 mt-2">
+                        <Image
+                          src={achievement.logo}
+                          alt="Organization logo"
+                          width={100}
+                          height={30}
+                          className="object-contain"
+                        />
+                        <span className="text-gray-600 dark:text-gray-400">&</span>
+                        <Image
+                          src={achievement.associatedLogo}
+                          alt={`${achievement.associatedOrg} logo`}
+                          width={30}
+                          height={30}
+                          className="opacity-70"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}
                 <p className="text-gray-700 dark:text-gray-300">{achievement.description}</p>
               </motion.div>
             ))}
@@ -836,7 +930,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={achievementsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-center"
+                className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-center relative"
               >
                 <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Image
@@ -849,6 +943,31 @@ export default function HomePage() {
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{card.title}</h3>
+                {card.associatedOrg && (
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    {card.associatedLogo && (
+                      <Image
+                        src={card.associatedLogo}
+                        alt="Associated organization logo"
+                        width={20}
+                        height={20}
+                        className="opacity-70"
+                      />
+                    )}
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      Associated with {card.associatedOrg}
+                    </p>
+                    {card.secondaryLogo && (
+                      <Image
+                        src={card.secondaryLogo}
+                        alt="Secondary organization logo"
+                        width={20}
+                        height={20}
+                        className="opacity-70 ml-1"
+                      />
+                    )}
+                  </div>
+                )}
                 <p className="text-gray-600 dark:text-gray-400">{card.description}</p>
               </motion.div>
             ))}
@@ -867,49 +986,74 @@ export default function HomePage() {
           >
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Experience</h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">
-              Building impactful solutions across diverse environments
+             From one obsession to the next, here’s the map so far.
             </p>
           </motion.div>
 
-          <div className="space-y-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={experienceInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-4"
+          >
             {experience.map((exp, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={experienceInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow relative"
               >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{exp.title}</h3>
-                    <p className="text-xl text-blue-600 dark:text-blue-400 font-semibold">{exp.company}</p>
+                {exp.logo && (
+                  <div className="absolute top-3 right-3">
+                    <Image
+                      src={exp.logo}
+                      alt={`${exp.company} logo`}
+                      width={36}
+                      height={36}
+                      className="object-contain opacity-80"
+                    />
                   </div>
-                  <div className="flex flex-col md:items-end mt-4 md:mt-0">
-                    <span className="text-gray-600 dark:text-gray-400 font-medium">{exp.period}</span>
-                    <span className="text-gray-500 dark:text-gray-500 text-sm flex items-center mt-1">
-                      <MapPin className="w-4 h-4 mr-1" />
+                )}
+                <div className="pr-12">
+                  <h3 className="text-base font-bold text-gray-900 dark:text-white">
+                    {exp.title}
+                    {exp.status && (
+                      <span className="ml-2 text-xs font-medium text-blue-600 dark:text-blue-400">
+                          ({exp.status})
+                        </span>
+                    )}
+                  </h3>
+                  <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-1">
+                    {exp.company}
+                  </p>
+                  <div className="flex items-center gap-3 text-xs text-gray-600 dark:text-gray-400 mb-2">
+                    <span className="flex items-center">
+                      <Calendar className="w-3 h-3 mr-1" />
+                      {exp.period}
+                    </span>
+                    <span className="flex items-center">
+                      <MapPin className="w-3 h-3 mr-1" />
                       {exp.location}
                     </span>
                   </div>
-                </div>
-                
-                <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">{exp.description}</p>
-                
-                <div className="space-y-2">
-                  <h4 className="font-semibold text-gray-900 dark:text-white mb-3">Key Achievements:</h4>
-                  <ul className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                    {exp.achievements.map((achievement, achIndex) => (
-                      <li key={achIndex} className="flex items-start">
-                        <Star className="w-4 h-4 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-600 dark:text-gray-400 text-sm">{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">{exp.description}</p>
+                  
+                  <div>
+                    <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-1">Achievements:</h4>
+                    <ul className="grid grid-cols-1 gap-1">
+                      {exp.achievements.map((achievement) => (
+                        <li key={`${exp.company}-${achievement}`} className="flex items-start">
+                          <Star className="w-3 h-3 text-yellow-500 mr-1 mt-0.5 flex-shrink-0" />
+                          <span className="text-xs text-gray-600 dark:text-gray-400">{achievement}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
