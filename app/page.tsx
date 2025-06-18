@@ -133,6 +133,29 @@ const achievements = [
   }
 ]
 
+const featureCards = [
+  {
+    title: 'Mission-Driven',
+    description: 'Focused on creating meaningful impact through innovative solutions',
+    icon: '/icons/strategy.svg'
+  },
+  {
+    title: 'Team Player',
+    description: 'Collaborative mindset with a focus on elevating the entire team',
+    icon: '/icons/puzzle.svg'
+  },
+  {
+    title: 'Continuous Learning',
+    description: 'Constantly expanding knowledge and embracing new challenges',
+    icon: '/icons/book.svg'
+  },
+  {
+    title: 'Passionate',
+    description: 'Deeply committed to excellence in every endeavor',
+    icon: '/icons/knight.svg'
+  }
+]
+
 export default function HomePage() {
   const [darkMode, setDarkMode] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -146,6 +169,7 @@ export default function HomePage() {
   // Intersection observers for animations
   const [heroRef, heroInView] = useInView({ threshold: 0.1, triggerOnce: true })
   const [aboutRef, aboutInView] = useInView({ threshold: 0.1, triggerOnce: true })
+  const [achievementsRef, achievementsInView] = useInView({ threshold: 0.1, triggerOnce: true })
   const [affiliatedRef, affiliatedInView] = useInView({ threshold: 0.1, triggerOnce: true })
   const [experienceRef, experienceInView] = useInView({ threshold: 0.1, triggerOnce: true })
   const [projectsRef, projectsInView] = useInView({ threshold: 0.1, triggerOnce: true })
@@ -424,12 +448,12 @@ export default function HomePage() {
                   },
                   {
                     title: 'Experience',
-                    subtitle: 'Work, leadership, and growth',
+                    subtitle: 'Professional journey and roles',
                     icon: '/icons/graduation.svg'
                   },
                   {
                     title: 'Projects',
-                    subtitle: 'End-to-end product & tech builds',
+                    subtitle: 'Solo and team product developments',
                     icon: '/icons/laptop.svg'
                   },
                   {
@@ -748,27 +772,24 @@ export default function HomePage() {
               animate={aboutInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
               className="lg:col-span-1 flex flex-col items-center"
-            >              {/* Photo placeholder - ready for joelgrad.jpg */}
-              <div className="w-80 h-96 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-700 dark:to-gray-600 rounded-3xl overflow-hidden shadow-xl">
+            >              {/* Photo placeholder - ready for joelgrad.jpg */}              <div className="w-96 h-[480px] bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-700 dark:to-gray-600 rounded-3xl overflow-hidden shadow-xl">
                 <Image
                   src="/joelgrad.jpg"
                   alt="Brady's graduation photo"
-                  width={320}
-                  height={384}
+                  width={480}
+                  height={600}
                   className="w-full h-full object-cover"
                 />
               </div>
             </motion.div>
           </div>
         </div>
-      </section>
-
-      {/* Achievements Section */}
-      <section id="achievements" className="py-20 bg-white dark:bg-gray-900">
+      </section>      {/* Achievements Section */}
+      <section id="achievements" ref={achievementsRef} className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={aboutInView ? { opacity: 1, y: 0 } : {}}
+            animate={achievementsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
@@ -778,28 +799,62 @@ export default function HomePage() {
             </p>
           </motion.div>
 
+          {/* Achievement Cards */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={aboutInView ? { opacity: 1, y: 0 } : {}}
+            animate={achievementsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-2 lg:grid-cols-4 gap-6"          >
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
+          >
             {achievements.map((achievement, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={aboutInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow"
-                >
-                  <Trophy className="w-12 h-12 text-yellow-500 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{achievement.title}</h3>
-                  <p className="text-blue-600 dark:text-blue-400 font-semibold mb-2">{achievement.organization}</p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">{achievement.year}</p>
-                  <p className="text-gray-700 dark:text-gray-300">{achievement.description}</p>
-                </motion.div>
-              ))}
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={achievementsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <Trophy className="w-12 h-12 text-yellow-500 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{achievement.title}</h3>
+                <p className="text-blue-600 dark:text-blue-400 font-semibold mb-2">{achievement.organization}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">{achievement.year}</p>
+                <p className="text-gray-700 dark:text-gray-300">{achievement.description}</p>
+              </motion.div>
+            ))}
           </motion.div>
-        </div>      </section>
+
+          {/* Feature Cards */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={achievementsInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="grid grid-cols-2 lg:grid-cols-4 gap-6"
+          >
+            {featureCards.map((card, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={achievementsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-center"
+              >
+                <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Image
+                    src={card.icon}
+                    alt={`${card.title} icon`}
+                    width={32}
+                    height={32}
+                    className="opacity-70 dark:opacity-90"
+                    style={{ filter: 'grayscale(0.2)' }}
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{card.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400">{card.description}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
 
       {/* Experience Section */}
       <section id="experience" ref={experienceRef} className="py-20 bg-gray-50 dark:bg-gray-800">
@@ -983,51 +1038,6 @@ export default function HomePage() {
                     </a>
                   </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-20 bg-white dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">What People Say</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
-              Feedback from colleagues and collaborators
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mr-4">
-                    <span className="text-white font-bold text-lg">
-                      {testimonial.name.split(' ').map(n => n[0]).join('')}
-                    </span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role}</p>
-                    <p className="text-sm text-blue-600 dark:text-blue-400">{testimonial.company}</p>
-                  </div>
-                </div>
-                <blockquote className="text-gray-600 dark:text-gray-400 italic leading-relaxed">
-                  "{testimonial.content}"
-                </blockquote>
               </motion.div>
             ))}
           </div>
