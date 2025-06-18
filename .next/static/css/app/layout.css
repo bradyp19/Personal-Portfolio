@@ -676,6 +676,15 @@ video {
 .top-4 {
   top: 1rem;
 }
+.right-4 {
+  right: 1rem;
+}
+.right-3 {
+  right: 0.75rem;
+}
+.top-3 {
+  top: 0.75rem;
+}
 .z-10 {
   z-index: 10;
 }
@@ -752,6 +761,9 @@ video {
 .mt-6 {
   margin-top: 1.5rem;
 }
+.mt-2 {
+  margin-top: 0.5rem;
+}
 .line-clamp-3 {
   overflow: hidden;
   display: -webkit-box;
@@ -812,8 +824,8 @@ video {
 .h-8 {
   height: 2rem;
 }
-.h-96 {
-  height: 24rem;
+.h-\[480px\] {
+  height: 480px;
 }
 .h-full {
   height: 100%;
@@ -821,8 +833,8 @@ video {
 .h-screen {
   height: 100vh;
 }
-.h-\[480px\] {
-  height: 480px;
+.h-3 {
+  height: 0.75rem;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -832,6 +844,9 @@ video {
 }
 .w-12 {
   width: 3rem;
+}
+.w-16 {
+  width: 4rem;
 }
 .w-2 {
   width: 0.5rem;
@@ -851,8 +866,8 @@ video {
 .w-8 {
   width: 2rem;
 }
-.w-80 {
-  width: 20rem;
+.w-96 {
+  width: 24rem;
 }
 .w-\[40\%\] {
   width: 40%;
@@ -866,11 +881,8 @@ video {
 .w-full {
   width: 100%;
 }
-.w-96 {
-  width: 24rem;
-}
-.w-16 {
-  width: 4rem;
+.w-3 {
+  width: 0.75rem;
 }
 .max-w-3xl {
   max-width: 48rem;
@@ -886,6 +898,9 @@ video {
 }
 .flex-shrink-0 {
   flex-shrink: 0;
+}
+.flex-grow {
+  flex-grow: 1;
 }
 .grow {
   flex-grow: 1;
@@ -963,6 +978,9 @@ video {
 }
 .gap-8 {
   gap: 2rem;
+}
+.gap-1 {
+  gap: 0.25rem;
 }
 .gap-x-10 {
   -moz-column-gap: 2.5rem;
@@ -1058,10 +1076,6 @@ video {
 .bg-blue-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(219 234 254 / var(--tw-bg-opacity, 1));
-}
-.bg-blue-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity, 1));
 }
 .bg-blue-600 {
   --tw-bg-opacity: 1;
@@ -1216,6 +1230,9 @@ video {
 .pt-16 {
   padding-top: 4rem;
 }
+.pr-12 {
+  padding-right: 3rem;
+}
 .text-center {
   text-align: center;
 }
@@ -1342,6 +1359,18 @@ video {
 }
 .opacity-90 {
   opacity: 0.9;
+}
+.opacity-10 {
+  opacity: 0.1;
+}
+.opacity-30 {
+  opacity: 0.3;
+}
+.opacity-20 {
+  opacity: 0.2;
+}
+.opacity-80 {
+  opacity: 0.8;
 }
 .shadow-lg {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
