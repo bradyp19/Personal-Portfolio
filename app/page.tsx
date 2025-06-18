@@ -24,56 +24,75 @@ const trustedBy = [
 ]
 
 const skills = [
-  { name: 'Full-Stack Development', level: 95, category: 'Technical' },
-  { name: 'Product Strategy', level: 90, category: 'Business' },
-  { name: 'AI/ML Implementation', level: 85, category: 'Technical' },
-  { name: 'Team Leadership', level: 88, category: 'Leadership' },
-  { name: 'Data Analytics', level: 92, category: 'Technical' },
-  { name: 'UI/UX Design', level: 80, category: 'Design' }
+  { name: 'Pitching New Ideas', level: 88, category: 'Creativity' },
+  { name: 'Product Storytelling', level: 80, category: 'Communication' },
+  { name: 'Running Sprints', level: 75, category: 'Process' },
+  { name: 'Learning a New Stack', level: 75, category: 'Technical' },
+  { name: 'Designing Wireframes', level: 65, category: 'Design' },
+  { name: 'Negotiating with Clients', level: 50, category: 'Business' }
 ]
-
 const projects = [
   {
     id: 1,
-    title: 'AI-Powered Analytics Platform',
-    description: 'Built end-to-end ML pipeline for predictive analytics with 94% accuracy',
-    tech: ['Python', 'TensorFlow', 'React', 'AWS'],
-    category: 'AI/ML',
-    image: '/projects/ai-platform.jpg',
-    demo: 'https://demo.example.com',
-    github: 'https://github.com/bradyp19',
-    metrics: { users: '10K+', performance: '40% faster', impact: '$2M saved' }
+    title: 'DiffSentry',
+    description: 'I built DiffSentry to help developers automatically catch vulnerabilities before they hit production. The platform integrates directly with GitHub Actions to scan open-source code in real time, using REST APIs for dynamic code classification and security analysis. I engineered a full-stack solution with FastAPI (Python) and React.js, deploying it with a streamlined CI/CD workflow using Heroku and Cloudflare Pages. DiffSentry analyzes around 1,000 code snippets per run, hitting over 97% detection accuracy. The project won 2nd place overall at the Google Developer Group showcase at UVA, competing among 700+ participants.',
+    subtitle: 'OSS repository vulnerability scanner',
+    tech: ['Python', 'FastAPI', 'React.js', 'GitHub Actions', 'Heroku', 'Cloudflare Pages'],
+    category: 'Security',
+    github: 'https://github.com/bradyp19/diffsentry'
   },
   {
     id: 2,
-    title: 'Full-Stack E-commerce Solution',
-    description: 'Scalable marketplace with real-time features and payment processing',
-    tech: ['Next.js', 'Node.js', 'PostgreSQL', 'Stripe'],
-    category: 'Web Development',
-    image: '/projects/ecommerce.jpg',
-    demo: 'https://demo.example.com',
-    github: 'https://github.com/bradyp19',
-    metrics: { transactions: '50K+', uptime: '99.9%', revenue: '$500K+' }
+    title: 'SunnyGlasses',
+    description: 'SunnyGlasses is an AI-powered tool designed to bridge communication gaps for the Deaf and hard-of-hearing community. Built during HooHacks, it converts American Sign Language gestures into spoken language using a custom-trained recognition model with OpenCV and TensorFlow on Google Cloud. I developed the full pipeline—from real-time gesture detection to speech output—achieving 98%+ accuracy on a dataset of about 1,000 samples. SunnyGlasses won 3rd place in the Accessibility Track out of 750+ hackers, reflecting its real-world potential and innovative approach.',
+    subtitle: 'AI-Driven Sign Language Interpreter @ HooHacks',
+    tech: ['OpenCV', 'TensorFlow', 'Google Cloud', 'Python', 'AI/ML'],
+    category: 'AI/ML',
+    github: 'https://github.com/bradyp19/sunnyglasses'
   },
   {
     id: 3,
-    title: 'Data Visualization Dashboard',
-    description: 'Interactive dashboard for business intelligence and reporting',
-    tech: ['D3.js', 'React', 'Python', 'FastAPI'],
-    category: 'Data Science',
-    image: '/projects/dashboard.jpg',
-    demo: 'https://demo.example.com',
-    github: 'https://github.com/bradyp19',
-    metrics: { insights: '200+', efficiency: '60% faster', adoption: '95%' }
+    title: 'Project Three',
+    description: 'Coming soon - Another exciting project in development.',
+    subtitle: 'Placeholder Project',
+    tech: ['TBD'],
+    category: 'Development',
+    github: '#'
+  },
+  {
+    id: 4,
+    title: 'Project Four',
+    description: 'Coming soon - Another exciting project in development.',
+    subtitle: 'Placeholder Project',
+    tech: ['TBD'],
+    category: 'Development',
+    github: '#'
+  },
+  {
+    id: 5,
+    title: 'Project Five',
+    description: 'Coming soon - Another exciting project in development.',
+    subtitle: 'Placeholder Project',
+    tech: ['TBD'],
+    category: 'Development',
+    github: '#'
+  },
+  {
+    id: 6,
+    title: 'Project Six',
+    description: 'Coming soon - Another exciting project in development.',
+    subtitle: 'Placeholder Project',
+    tech: ['TBD'],
+    category: 'Development',
+    github: '#'
   }
 ]
 
 const experience = [
   {
     title: 'Sales Engineering Intern',
-    company: 'Strategy One (NASDAQ: MSTR)',
+    company: 'Strategy (NASDAQ: MSTR)',
     period: 'June 2025 - Aug 2025',
-    status: 'Incoming',
     location: 'Tysons, VA',
     description: 'Working with Fortune 500 companies to demonstrate enterprise analytics solutions and build custom proofs-of-concept.',
     achievements: [
@@ -108,8 +127,7 @@ const experience = [
       'Expanded client and consultant base significantly'
     ],
     logo: '/logos/tsg.svg'
-  },
-  {
+  },  {
     title: 'Technology Consultant Intern',
     company: 'INTEREL',
     period: 'Dec 2024 - Jan 2025',
@@ -119,9 +137,9 @@ const experience = [
       'Built smart occupancy detection system without hardware dependencies',
       'Implemented POC in 250-room hotel',
       'Scaled solution for large-scale deployments'
-    ]
-  },
-  {
+    ],
+    logo: '/logos/interel.jpg'
+  },  {
     title: 'Technology Consultant Intern',
     company: 'Sentiont LLC',
     period: 'Aug 2024 - Dec 2024',
@@ -131,7 +149,8 @@ const experience = [
       'Launched AI-powered access control systems',
       'Developed internal compliance dashboard',
       'Streamlined regulatory compliance processes'
-    ]
+    ],
+    logo: '/logos/sentiont.jpg'
   },
   {
     title: 'Data Structures and Algorithms Teaching Assistant',
@@ -277,10 +296,9 @@ export default function HomePage() {
                 />
               </motion.div>
             </motion.div>
-            
-            {/* Desktop Navigation */}
+              {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              {['About', 'Experience', 'Projects', 'Skills', 'Contact'].map((item) => (
+              {['About', 'Experience', 'Achievements', 'Projects', 'Skills'].map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}
@@ -288,20 +306,12 @@ export default function HomePage() {
                 >
                   {item}
                 </a>
-              ))}
-              <button
+              ))}              <button
                 onClick={toggleDarkMode}
                 className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
               >
                 {darkMode ? <FiSun className="w-5 h-5" /> : <FiMoon className="w-5 h-5" />}
               </button>
-              <a
-                href="/resume.pdf"
-                className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                <FiDownload className="w-4 h-4 mr-2" />
-                Resume
-              </a>
             </div>
 
             {/* Mobile menu button */}
@@ -320,9 +330,8 @@ export default function HomePage() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
-          >
-            <div className="px-4 py-2 space-y-2">
-              {['About', 'Experience', 'Projects', 'Skills', 'Contact'].map((item) => (
+          >            <div className="px-4 py-2 space-y-2">
+              {['About', 'Experience', 'Achievements', 'Projects', 'Skills'].map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}
@@ -831,7 +840,83 @@ export default function HomePage() {
             </motion.div>
           </div>
         </div>
-      </section>      {/* Achievements Section */}
+      </section>      {/* Experience Section */}
+      <section id="experience" ref={experienceRef} className="py-20 bg-gray-50 dark:bg-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={experienceInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Experience</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-400">
+             From one obsession to the next, here's the map so far.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={experienceInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-4"
+          >
+            {experience.map((exp, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={experienceInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow relative"
+              >                {exp.logo && (
+                  <div className="absolute top-4 right-4">
+                    <Image
+                      src={exp.logo}
+                      alt={`${exp.company} logo`}
+                      width={60}
+                      height={60}
+                      className="object-contain opacity-80"
+                    />
+                  </div>
+                )}
+                <div className="pr-20">
+                  <h3 className="text-base font-bold text-gray-900 dark:text-white">
+                    {exp.title}
+                  </h3>
+                  <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-1">
+                    {exp.company}
+                  </p>
+                  <div className="flex items-center gap-3 text-xs text-gray-600 dark:text-gray-400 mb-2">
+                    <span className="flex items-center">
+                      <Calendar className="w-3 h-3 mr-1" />
+                      {exp.period}
+                    </span>
+                    <span className="flex items-center">
+                      <MapPin className="w-3 h-3 mr-1" />
+                      {exp.location}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">{exp.description}</p>
+                  
+                  <div>
+                    <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-1">Achievements:</h4>
+                    <ul className="grid grid-cols-1 gap-1">
+                      {exp.achievements.map((achievement) => (
+                        <li key={`${exp.company}-${achievement}`} className="flex items-start">
+                          <Star className="w-3 h-3 text-yellow-500 mr-1 mt-0.5 flex-shrink-0" />
+                          <span className="text-xs text-gray-600 dark:text-gray-400">{achievement}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Achievements Section */}
       <section id="achievements" ref={achievementsRef} className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -860,8 +945,7 @@ export default function HomePage() {
                 animate={achievementsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow relative overflow-hidden"
-              >
-                {achievement.logo && !achievement.showLogoWithAssociation && (
+              >                {achievement.logo && (
                   <div className={`absolute top-4 right-4 ${achievement.logoStyle === 'prominent' ? 'opacity-30' : 'opacity-10'}`}>
                     <Image
                       src={achievement.logo}
@@ -877,8 +961,7 @@ export default function HomePage() {
                 <p className="text-blue-600 dark:text-blue-400 font-semibold mb-2">{achievement.organization}</p>
                 {achievement.associatedOrg && (
                   <div className="flex flex-col items-center justify-center gap-2 mb-2">
-                    <div className="flex items-center justify-center gap-2">
-                      {achievement.associatedLogo && !achievement.showLogoWithAssociation && (
+                    <div className="flex items-center justify-center gap-2">                      {achievement.associatedLogo && (
                         <Image
                           src={achievement.associatedLogo}
                           alt={`${achievement.associatedOrg} logo`}
@@ -888,28 +971,8 @@ export default function HomePage() {
                         />
                       )}
                       <p className="text-sm text-gray-600 dark:text-gray-400">
-                        Associated with {achievement.associatedOrg}
-                      </p>
+                        Associated with {achievement.associatedOrg}                      </p>
                     </div>
-                    {achievement.showLogoWithAssociation && achievement.logo && (
-                      <div className="flex items-center justify-center gap-2 mt-2">
-                        <Image
-                          src={achievement.logo}
-                          alt="Organization logo"
-                          width={100}
-                          height={30}
-                          className="object-contain"
-                        />
-                        <span className="text-gray-600 dark:text-gray-400">&</span>
-                        <Image
-                          src={achievement.associatedLogo}
-                          alt={`${achievement.associatedOrg} logo`}
-                          width={30}
-                          height={30}
-                          className="opacity-70"
-                        />
-                      </div>
-                    )}
                   </div>
                 )}
                 <p className="text-gray-700 dark:text-gray-300">{achievement.description}</p>
@@ -971,93 +1034,80 @@ export default function HomePage() {
                 <p className="text-gray-600 dark:text-gray-400">{card.description}</p>
               </motion.div>
             ))}
-          </motion.div>
-        </div>
+          </motion.div>        </div>
       </section>
 
-      {/* Experience Section */}
-      <section id="experience" ref={experienceRef} className="py-20 bg-gray-50 dark:bg-gray-800">
+      {/* Projects Section */}
+      <section id="projects" ref={projectsRef} className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={experienceInView ? { opacity: 1, y: 0 } : {}}
+            animate={projectsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Experience</h2>
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4"> Projects</h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">
-             From one obsession to the next, here’s the map so far.
+              Where curiosity meets Celsius & questionable sleep schedules.
             </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={experienceInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-4"
-          >
-            {experience.map((exp, index) => (
-              <motion.div
-                key={index}
+          </motion.div>          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.map((project, index) => (
+                <motion.div
+                key={project.id}
                 initial={{ opacity: 0, y: 20 }}
-                animate={experienceInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow relative"
-              >
-                {exp.logo && (
-                  <div className="absolute top-3 right-3">
-                    <Image
-                      src={exp.logo}
-                      alt={`${exp.company} logo`}
-                      width={36}
-                      height={36}
-                      className="object-contain opacity-80"
-                    />
+                animate={projectsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                <div className="relative h-32 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-gray-700 dark:to-gray-600">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <FiCode className="w-8 h-8 text-blue-600 dark:text-blue-400 mx-auto mb-1" />
+                    <span className="text-xs text-gray-600 dark:text-gray-400">Project Preview</span>
                   </div>
-                )}
-                <div className="pr-12">
-                  <h3 className="text-base font-bold text-gray-900 dark:text-white">
-                    {exp.title}
-                    {exp.status && (
-                      <span className="ml-2 text-xs font-medium text-blue-600 dark:text-blue-400">
-                          ({exp.status})
-                        </span>
-                    )}
-                  </h3>
-                  <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-1">
-                    {exp.company}
-                  </p>
-                  <div className="flex items-center gap-3 text-xs text-gray-600 dark:text-gray-400 mb-2">
-                    <span className="flex items-center">
-                      <Calendar className="w-3 h-3 mr-1" />
-                      {exp.period}
-                    </span>
-                    <span className="flex items-center">
-                      <MapPin className="w-3 h-3 mr-1" />
-                      {exp.location}
-                    </span>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">{exp.description}</p>
-                  
-                  <div>
-                    <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-1">Achievements:</h4>
-                    <ul className="grid grid-cols-1 gap-1">
-                      {exp.achievements.map((achievement) => (
-                        <li key={`${exp.company}-${achievement}`} className="flex items-start">
-                          <Star className="w-3 h-3 text-yellow-500 mr-1 mt-0.5 flex-shrink-0" />
-                          <span className="text-xs text-gray-600 dark:text-gray-400">{achievement}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="absolute top-3 left-3">
+                  <span className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-medium">
+                    {project.category}
+                  </span>
                   </div>
                 </div>
-              </motion.div>
+                <div className="p-4">
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">{project.title}</h3>
+                  {project.subtitle && (
+                  <p className="text-blue-600 dark:text-blue-400 font-medium mb-2 text-sm">{project.subtitle}</p>
+                  )}
+                  <p className="text-gray-600 dark:text-gray-400 mb-3 leading-relaxed text-sm line-clamp-4">
+                  {project.description.length > 150 ? project.description.substring(0, 150) + '...' : project.description}
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-1 mb-4">
+                  {project.tech.slice(0, 4).map((tech) => (
+                    <span key={tech} className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded text-xs">
+                    {tech}
+                    </span>
+                  ))}
+                  {project.tech.length > 4 && (
+                    <span className="text-gray-500 dark:text-gray-400 text-xs">+{project.tech.length - 4} more</span>
+                  )}
+                  </div>
+                  
+                  <div className="flex justify-center">
+                  <a
+                    href={project.github}
+                    className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-xs font-medium flex items-center justify-center"
+                  >
+                    <FiGithub className="w-3 h-3 mr-1" />
+                    {project.github === '#' ? 'Coming Soon' : 'View on GitHub'}
+                  </a>
+                  </div>
+                </div>
+                </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Skills Section */}
       <section id="skills" ref={skillsRef} className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -1068,7 +1118,7 @@ export default function HomePage() {
           >
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Skills & Expertise</h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">
-              Comprehensive skill set spanning technical depth and strategic thinking
+              What I bring when I show up—besides just code (lol).
             </p>
           </motion.div>
 
@@ -1104,122 +1154,33 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" ref={projectsRef} className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={projectsInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Featured Projects</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
-              End-to-end solutions that blend technical innovation with real-world impact
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={projectsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <div className="relative h-48 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-gray-700 dark:to-gray-600">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <FiCode className="w-12 h-12 text-blue-600 dark:text-blue-400 mx-auto mb-2" />
-                      <span className="text-sm text-gray-600 dark:text-gray-400">Project Preview</span>
-                    </div>
-                  </div>
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                      {project.category}
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{project.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">{project.description}</p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((tech, techIndex) => (
-                      <span key={techIndex} className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-lg text-sm">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  <div className="grid grid-cols-3 gap-4 mb-6 text-center">
-                    {Object.entries(project.metrics).map(([key, value], metricIndex) => (
-                      <div key={metricIndex}>
-                        <div className="text-lg font-bold text-blue-600 dark:text-blue-400">{value}</div>
-                        <div className="text-xs text-gray-500 dark:text-gray-400 capitalize">{key}</div>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  <div className="flex space-x-4">
-                    <a
-                      href={project.demo}
-                      className="flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-center text-sm font-medium flex items-center justify-center"
-                    >
-                      <FiExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
-                    </a>
-                    <a
-                      href={project.github}
-                      className="flex-1 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 py-2 px-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-center text-sm font-medium flex items-center justify-center"
-                    >
-                      <FiGithub className="w-4 h-4 mr-2" />
-                      Code
-                    </a>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+      </section>      {/* Contact Section */}
+      <section id="contact" className="py-12 bg-gray-50 dark:bg-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-6"
           >
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Let's Connect</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
-              Ready to build something amazing together?
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">Let's Connect</h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400">Have a question or want to collaborate? I'd love to hear from you!</p>
+          </motion.div>          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-lg"
+              className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg"
             >
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Send a Message</h3>
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Send a Message</h3>
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Name
                   </label>
                   <input
                     {...register('name', { required: true })}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
                     placeholder="Your name"
                   />
                   {errors.name && <p className="text-red-500 text-sm mt-1">Name is required</p>}
@@ -1232,7 +1193,7 @@ export default function HomePage() {
                   <input
                     {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
                     type="email"
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
                     placeholder="your@email.com"
                   />
                   {errors.email && <p className="text-red-500 text-sm mt-1">Valid email is required</p>}
@@ -1244,8 +1205,8 @@ export default function HomePage() {
                   </label>
                   <textarea
                     {...register('message', { required: true })}
-                    rows={5}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
+                    rows={4}
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
                     placeholder="Your message..."
                   />
                   {errors.message && <p className="text-red-500 text-sm mt-1">Message is required</p>}
@@ -1253,99 +1214,111 @@ export default function HomePage() {
                 
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+                  className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
                 >
                   Send Message
                 </button>
               </form>
-            </motion.div>
-
-            {/* Contact Info */}
+            </motion.div>            {/* Social Links */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="space-y-8"
+              className="flex flex-col justify-center items-center"
             >
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Get in Touch</h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-8">
-                  I'm always open to discussing new opportunities, innovative projects, or just having a great conversation about technology and product strategy.
-                </p>
-              </div>              <div className="space-y-6">
-                {[
-                  { icon: FiMail, label: 'Email', value: 'apu9pz@virginia.edu', href: 'mailto:apu9pz@virginia.edu' },
-                  { icon: FiGithub, label: 'GitHub', value: 'github.com/bradyp19', href: 'https://github.com/bradyp19' },
-                  { icon: FiLinkedin, label: 'LinkedIn', value: 'Brady Park', href: 'https://www.linkedin.com/in/brady-park-9a5469208/' }
-                ].map((contact, index) => {
-                  const IconComponent = contact.icon
-                  return (
-                  <a
-                    key={index}
-                    href={contact.href}
-                    className="flex items-center p-4 bg-white dark:bg-gray-900 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 group"
-                  >
-                    <div className="text-blue-600 dark:text-blue-400 mr-4 group-hover:scale-110 transition-transform">
-                      <IconComponent className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-gray-900 dark:text-white">{contact.label}</p>
-                      <p className="text-gray-600 dark:text-gray-400">{contact.value}</p>
-                    </div>
-                  </a>
-                  )
-                })}
-              </div>
+              <div className="grid grid-cols-2 gap-6">
+                {/* LinkedIn Button */}
+                <motion.a
+                  href="https://www.linkedin.com/in/brady-park-9a5469208/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-24 h-24 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group"
+                >
+                  <FiLinkedin className="w-10 h-10 text-white group-hover:scale-110 transition-transform" />
+                </motion.a>
 
-              <div className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg">
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Let's Build Together</h4>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  Whether you're looking for a technical co-founder, product strategist, or full-stack developer, I'm here to help turn ideas into reality.
-                </p>
-                <div className="flex space-x-4">
-                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">Available for Projects</span>
-                  <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm">Open to Opportunities</span>
-                </div>
+                {/* GitHub Button */}
+                <motion.a
+                  href="https://github.com/bradyp19"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-24 h-24 bg-gradient-to-br from-gray-700 to-gray-800 dark:from-gray-600 dark:to-gray-700 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group"
+                >
+                  <FiGithub className="w-10 h-10 text-white group-hover:scale-110 transition-transform" />
+                </motion.a>
               </div>
             </motion.div>
           </div>
-        </div>
-      </section>{/* Footer */}
-      <footer className="bg-gray-100 dark:bg-gray-800 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="flex flex-col items-center space-y-6">
-            {/* Email Link */}
-            <a
-              href="mailto:apu9pz@virginia.edu"
-              className="text-2xl font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-            >
-              apu9pz@virginia.edu
-            </a>
-            
-            {/* Social Icons */}
-            <div className="flex items-center space-x-8">
-              <a
-                href="https://www.linkedin.com/in/brady-park-9a5469208/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-              >
-                <FiLinkedin className="w-6 h-6" />
-              </a>
-              <a
-                href="https://github.com/bradyp19"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-              >
-                <FiGithub className="w-6 h-6" />
-              </a>
+        </div>      </section>      {/* Footer */}
+      <footer className="bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Main Footer Content */}
+          <div className="py-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center space-y-6"
+            >              {/* Hobby Icons */}
+              <div className="flex justify-center items-center space-x-4 flex-wrap gap-2">
+                {[
+                  'basketball.svg',
+                  'cross.svg', 
+                  'crunchyroll.svg',
+                  'discord.svg',
+                  'dumbbell.svg',
+                  'game.svg',
+                  'gears.svg',
+                  'gears1.svg',
+                  'gears2.svg',
+                  'guitar.svg',
+                  'music.svg',
+                  'naruto.svg',
+                  'transformers.svg'
+                ].map((icon, index) => (
+                  <motion.div
+                    key={icon}
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                    whileHover={{ scale: 1.2, rotate: 5 }}
+                    className="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
+                  >
+                    <Image
+                      src={`/icons/${icon}`}
+                      alt="Hobby icon"
+                      width={24}
+                      height={24}
+                      className="w-6 h-6 opacity-60 hover:opacity-100 transition-opacity"
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="border-t border-gray-200 dark:border-gray-700 py-4">
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
+              <p className="text-gray-500 dark:text-gray-400 text-sm">
+                © 2025 Brady Park. All rights reserved.
+              </p>
+              <div className="flex items-center space-x-1 text-gray-500 dark:text-gray-400 text-sm">
+                <span>Built with</span>
+                <motion.span
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="text-red-500"
+                >
+                  ❤️
+                </motion.span>
+                <span>using Next.js & Tailwind CSS</span>
+              </div>
             </div>
-            
-            {/* Credit */}
-            <p className="text-sm text-gray-500 dark:text-gray-400">
-              Built with Next.js & Tailwind CSS
-            </p>
           </div>
         </div>
       </footer>
