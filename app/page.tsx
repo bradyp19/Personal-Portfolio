@@ -143,10 +143,10 @@ export default function HomePage() {
 
   // Form handling
   const { register, handleSubmit, reset, formState: { errors } } = useForm()
-
   // Intersection observers for animations
   const [heroRef, heroInView] = useInView({ threshold: 0.1, triggerOnce: true })
   const [aboutRef, aboutInView] = useInView({ threshold: 0.1, triggerOnce: true })
+  const [affiliatedRef, affiliatedInView] = useInView({ threshold: 0.1, triggerOnce: true })
   const [experienceRef, experienceInView] = useInView({ threshold: 0.1, triggerOnce: true })
   const [projectsRef, projectsInView] = useInView({ threshold: 0.1, triggerOnce: true })
   const [skillsRef, skillsInView] = useInView({ threshold: 0.1, triggerOnce: true })
@@ -264,12 +264,12 @@ export default function HomePage() {
             animate={heroInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
             className="w-[40%] h-screen relative"
-          >
-            <Image
+          >            <Image
               src="/portrait.jpg"
               alt="Brady Park"
               fill
               quality={100}
+              sizes="(max-width: 768px) 100vw, 40vw"
               className="object-cover object-center"
               priority
               unoptimized
@@ -329,7 +329,7 @@ export default function HomePage() {
                 transition={{ duration: 0.8, delay: 0.7 }}
                 className="text-lg text-blue-600 dark:text-blue-400 font-medium mb-6 leading-relaxed"
               >
-                Self-made immigrant turned full-ride Echols Scholar at UVA, now supporting AI-driven, full-stack solutions.
+                Self-made immigrant turned full-ride QuestBridge & Echols Scholar at UVA, now supporting AI-driven, full-stack solutions.
               </motion.p>
 
               <motion.p
@@ -350,7 +350,7 @@ export default function HomePage() {
                   visible: {
                     opacity: 1,
                     transition: {
-                      delayChildren: 0.9,
+                      delayChildren: 0.6,
                       staggerChildren: 0.1
                     }
                   }
@@ -384,7 +384,7 @@ export default function HomePage() {
                         y: 0, 
                         scale: 1,
                         transition: {
-                          duration: 0.6,
+                          duration: 0.4,
                           ease: [0.22, 1, 0.36, 1]
                         }
                       }
@@ -405,79 +405,90 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>      {/* Affiliated With Section */}
-      <section className="py-12 bg-gray-50 dark:bg-gray-800/50 border-t border-gray-200 dark:border-gray-700">
+      <section ref={affiliatedRef} className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-lg font-semibold text-gray-900 dark:text-white text-center mb-8">
-            Affiliated with
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+          {/* Enhanced Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={affiliatedInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+              Affiliated with
+            </h2>
+            <div className="w-32 h-1 bg-blue-600 dark:bg-blue-400 mx-auto rounded-full"></div>
+          </motion.div>
+
+          {/* Logo Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
             {/* University of Virginia */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={affiliatedInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="flex flex-col items-center text-center mx-6 py-2"
+              whileHover={{ 
+                scale: 1.08,
+                filter: "brightness(1.1)",
+                boxShadow: "0 10px 25px rgba(0,0,0,0.1)"
+              }}
+              className="flex items-center justify-center h-28 p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <div className="h-12 flex items-center justify-center mb-4">
-                <Image
-                  src="/logos/uva.svg"
-                  alt="University of Virginia"
-                  width={0}
-                  height={48}
-                  className="h-12 w-auto object-contain"
-                  style={{ width: 'auto', height: '48px' }}
-                />
-              </div>
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-1">University of Virginia</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Echols & QuestBridge Scholar (B.A. Computer Science, Minor in Engineering Business)
-              </p>
+              <Image
+                src="/logos/uva.svg"
+                alt="University of Virginia"
+                width={0}
+                height={100}
+                className="h-24 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                style={{ width: 'auto', height: '96px' }}
+                priority
+              />
             </motion.div>
 
-            {/* Strategy */}
+            {/* Strategy One */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={affiliatedInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex flex-col items-center text-center mx-6 py-2"
+              whileHover={{ 
+                scale: 1.08,
+                filter: "brightness(1.1)",
+                boxShadow: "0 10px 25px rgba(0,0,0,0.1)"
+              }}
+              className="flex items-center justify-center h-28 p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <div className="h-12 flex items-center justify-center mb-4">
-                <Image
-                  src="/logos/strategy.svg"
-                  alt="Strategy (NASDAQ: MSTR, prev. MicroStrategy)"
-                  width={0}
-                  height={48}
-                  className="h-12 w-auto object-contain"
-                  style={{ width: 'auto', height: '48px' }}
-                />
-              </div>
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Strategy (NASDAQ: MSTR)</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Sales Engineering Intern
-              </p>
+              <Image
+                src="/logos/strategy.svg"
+                alt="Strategy One (MicroStrategy)"
+                width={0}
+                height={80}
+                className="h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                style={{ width: 'auto', height: '80px' }}
+                priority
+              />
             </motion.div>
 
             {/* Technology Strategy Group */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={affiliatedInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col items-center text-center mx-6 py-2"
+              whileHover={{ 
+                scale: 1.08,
+                filter: "brightness(1.1)",
+                boxShadow: "0 10px 25px rgba(0,0,0,0.1)"
+              }}
+              className="flex items-center justify-center h-28 p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <div className="h-12 flex items-center justify-center mb-4">
-                <Image
-                  src="/logos/tsg.svg"
-                  alt="Technology Strategy Group"
-                  width={0}
-                  height={48}
-                  className="h-12 w-auto object-contain"
-                  style={{ width: 'auto', height: '48px' }}
-                />
-              </div>
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-1">Technology Strategy Group</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Director of Operations
-              </p>
+              <Image
+                src="/logos/tsg.svg"
+                alt="Technology Strategy Group"
+                width={0}
+                height={100}
+                className="h-24 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                style={{ width: 'auto', height: '96px' }}
+                priority
+              />
             </motion.div>
           </div>
         </div>
@@ -494,7 +505,7 @@ export default function HomePage() {
           >
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">About Me</h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              From immigrant to Echols Scholar to product strategist - my journey is driven by the belief that technology should solve real problems.
+              My journey is driven by the belief that technology should solve real problems.
             </p>
           </motion.div>
 
@@ -508,7 +519,7 @@ export default function HomePage() {
               <div className="space-y-4 text-gray-600 dark:text-gray-400">
                 <p>
                   Born in South Korea, I immigrated to the United States with a dream and determination to make an impact. 
-                  Through hard work and perseverance, I earned a full-ride Echols Scholarship to the University of Virginia.
+                  Through hard work and perseverance, I earned a full-ride scholarship to the University of Virginia.
                 </p>
                 <p>
                   Today, I bridge the gap between technical innovation and business strategy, building products that scale 
@@ -935,38 +946,7 @@ export default function HomePage() {
             </motion.div>
           </div>
         </div>
-      </section>
-
-      {/* Trusted By Section */}
-      <section className="py-12 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-sm font-medium text-gray-500 dark:text-gray-400 text-center mb-8">
-            Currently Working With
-          </p>
-          <div className="grid grid-cols-3 gap-8 items-center">
-            {trustedBy.map((company, index) => (
-              <motion.div
-                key={company.name}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
-                className="flex items-center justify-center h-16"
-              >
-                <Image
-                  src={company.src}
-                  alt={company.alt}
-                  width={0}
-                  height={0}
-                  className="h-12 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                  style={{ width: 'auto', height: '48px' }}
-                  priority
-                />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>      {/* Footer */}
+      </section>{/* Footer */}
       <footer className="bg-gray-100 dark:bg-gray-800 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex flex-col items-center space-y-6">
