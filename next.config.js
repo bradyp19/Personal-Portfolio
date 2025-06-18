@@ -10,8 +10,6 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
-  // Allow serving static files from brady-portfolio/public
-  assetPrefix: '/brady-portfolio/public',
 }
 
 module.exports = nextConfig
