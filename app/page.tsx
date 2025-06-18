@@ -35,11 +35,12 @@ const projects = [
   {
     id: 1,
     title: 'DiffSentry',
-    description: 'I built DiffSentry to help developers automatically catch vulnerabilities before they hit production. The platform integrates directly with GitHub Actions to scan open-source code in real time, using REST APIs for dynamic code classification and security analysis. I engineered a full-stack solution with FastAPI (Python) and React.js, deploying it with a streamlined CI/CD workflow using Heroku and Cloudflare Pages. DiffSentry analyzes around 1,000 code snippets per run, hitting over 97% detection accuracy. The project won 2nd place overall at the Google Developer Group showcase at UVA, competing among 700+ participants.',
+    description: 'DiffSentry was built to help developers automatically catch vulnerabilities before they hit production. The platform integrates directly with GitHub Actions to scan open-source code in real time, using REST APIs for dynamic code classification and security analysis. I engineered a full-stack solution with FastAPI (Python) and React.js, deploying it with a streamlined CI/CD workflow using Heroku and Cloudflare Pages. DiffSentry analyzes around 1,000 code snippets per run, hitting over 97% detection accuracy. The project won 2nd place overall at the Google Developer Group showcase at UVA, competing among 700+ participants.',
     subtitle: 'OSS repository vulnerability scanner',
     tech: ['Python', 'FastAPI', 'React.js', 'GitHub Actions', 'Heroku', 'Cloudflare Pages'],
     category: 'Security',
-    github: 'https://github.com/bradyp19/diffsentry'
+    github: 'https://github.com/bradyp19/diffsentry',
+    image: '/previews/diffsentry.png'
   },
   {
     id: 2,
@@ -48,43 +49,47 @@ const projects = [
     subtitle: 'AI-Driven Sign Language Interpreter @ HooHacks',
     tech: ['OpenCV', 'TensorFlow', 'Google Cloud', 'Python', 'AI/ML'],
     category: 'AI/ML',
-    github: 'https://github.com/bradyp19/sunnyglasses'
+    github: 'https://github.com/bradyp19/sunnyglasses',
+    image: '/previews/sunnyglasses.jpg'
   },
   {
     id: 3,
-    title: 'Project Three',
-    description: 'Coming soon - Another exciting project in development.',
-    subtitle: 'Placeholder Project',
-    tech: ['TBD'],
-    category: 'Development',
-    github: '#'
+    title: 'SOC-in-a-Box',
+    description: 'A plug-and-play security lab for threat detection and response. Built during my GuidePoint Security internship, SOC-in-a-Box brings together real-time monitoring, advanced detection, centralized logging, and incident response—all in a streamlined, easy-to-deploy package. It gives teams a functional SOC without the overhead, making cybersecurity accessible, fast, and scalable.',
+    subtitle: 'Plug-and-play security lab for threat detection',
+    tech: ['Python', 'ELK Stack', 'Docker', 'SIEM', 'Threat Detection', 'Security'],
+    category: 'Security',
+    github: 'https://github.com/bradyp19/soc-in-a-box',
+    image: '/previews/socinabox.png'
   },
   {
     id: 4,
-    title: 'Project Four',
-    description: 'Coming soon - Another exciting project in development.',
-    subtitle: 'Placeholder Project',
-    tech: ['TBD'],
-    category: 'Development',
-    github: '#'
+    title: 'Market Intelligence Agent',
+    description: 'Built for my Strategy internship, the project turns product news into actionable insights—automatically. An automated Python agent that scrapes, summarizes, and formats product announcements from top AI/BI vendors. With feature extraction, theme grouping, and markdown export, it\'s built for market intelligence posts that keep teams up to speed—minus the manual work.',
+    subtitle: 'Automated product news intelligence agent',
+    tech: ['Python', 'Web Scraping', 'NLP', 'Automation', 'Data Analysis'],
+    category: 'AI/ML',
+    github: 'https://github.com/bradyp19/market-intelligence-agent',
+    image: '/previews/strategy.png'
   },
   {
     id: 5,
-    title: 'Project Five',
-    description: 'Coming soon - Another exciting project in development.',
-    subtitle: 'Placeholder Project',
-    tech: ['TBD'],
+    title: 'Personal Portfolio',
+    description: 'A living sandbox for design, code, and storytelling. More than a portfolio—this site is where I experiment with new ideas, rethink my story, and push my skills in React, Tailwind, and product design. Every update is part late-night experiment, part reflection on how I build and share work.',
+    subtitle: 'Living sandbox for design and development',
+    tech: ['React', 'Next.js', 'Tailwind CSS', 'TypeScript', 'Framer Motion'],
     category: 'Development',
-    github: '#'
+    github: 'https://github.com/bradyp19/personal-portfolio'
   },
   {
     id: 6,
-    title: 'Project Six',
-    description: 'Coming soon - Another exciting project in development.',
-    subtitle: 'Placeholder Project',
-    tech: ['TBD'],
-    category: 'Development',
-    github: '#'
+    title: 'Ouroboros',
+    description: 'A multimedia meditation on cycles and renewal, filmed at Morven Field. Created with Adobe Express Suite, Ouroboros weaves together video, photography, and sound to explore how endings feed new beginnings. The looping, arching tree at its center echoes the eternal return of nature—an invitation to see how every stillness is just part of a larger cycle.',
+    subtitle: 'Multimedia meditation on cycles and renewal',
+    tech: ['Adobe Express Suite', 'Video Production', 'Photography', 'Sound Design'],
+    category: 'Creative',
+    github: '#',
+    image: '/previews/ourosboros.png'
   }
 ]
 
@@ -1058,18 +1063,28 @@ export default function HomePage() {
                 animate={projectsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                <div className="relative h-32 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-gray-700 dark:to-gray-600">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <FiCode className="w-8 h-8 text-blue-600 dark:text-blue-400 mx-auto mb-1" />
-                    <span className="text-xs text-gray-600 dark:text-gray-400">Project Preview</span>
-                  </div>
-                  </div>
+                >                <div className="relative h-48 bg-gray-100 dark:bg-gray-700 overflow-hidden">
+                  {project.image ? (
+                    <Image
+                      src={project.image}
+                      alt={`${project.title} preview`}
+                      fill
+                      className={`transition-transform duration-300 hover:scale-105 ${
+                        project.id === 4 ? 'object-contain p-4' : 'object-cover'
+                      }`}
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-center">
+                        <FiCode className="w-8 h-8 text-blue-600 dark:text-blue-400 mx-auto mb-1" />
+                        <span className="text-xs text-gray-600 dark:text-gray-400">Project Preview</span>
+                      </div>
+                    </div>
+                  )}
                   <div className="absolute top-3 left-3">
-                  <span className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-medium">
-                    {project.category}
-                  </span>
+                    <span className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-medium">
+                      {project.category}
+                    </span>
                   </div>
                 </div>
                 <div className="p-4">
@@ -1156,104 +1171,107 @@ export default function HomePage() {
         </div>
       </section>      {/* Contact Section */}
       <section id="contact" className="py-12 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">          <motion.div
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">          {/* Enhanced Header */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-6"
+            className="text-center mb-8 py-6 bg-white dark:bg-gray-900 rounded-xl"
           >
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">Let's Connect</h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400">Have a question or want to collaborate? I'd love to hear from you!</p>
-          </motion.div>          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            {/* Contact Form */}
+            <h2 className="text-3xl font-light tracking-wide text-gray-800 dark:text-gray-100">Open to new ideas, feedback, or collaborations</h2>
+          </motion.div>
+
+          {/* 70-30 Layout */}
+          <div className="flex flex-col lg:flex-row gap-3 items-center">
+            {/* Contact Form - 70% */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg"
+              className="w-full lg:w-[70%] bg-white dark:bg-gray-900 rounded-lg p-6 shadow-md"
             >
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Send a Message</h3>
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Name
-                  </label>
-                  <input
-                    {...register('name', { required: true })}
-                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
-                    placeholder="Your name"
-                  />
-                  {errors.name && <p className="text-red-500 text-sm mt-1">Name is required</p>}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                      Name
+                    </label>
+                    <input
+                      {...register('name', { required: true })}
+                      className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
+                      placeholder="Your name"
+                    />
+                    {errors.name && <p className="text-red-500 text-xs mt-1">Name is required</p>}
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                      Email
+                    </label>
+                    <input
+                      {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
+                      type="email"
+                      className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
+                      placeholder="your@email.com"
+                    />
+                    {errors.email && <p className="text-red-500 text-xs mt-1">Valid email is required</p>}
+                  </div>
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Email
-                  </label>
-                  <input
-                    {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
-                    type="email"
-                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
-                    placeholder="your@email.com"
-                  />
-                  {errors.email && <p className="text-red-500 text-sm mt-1">Valid email is required</p>}
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                     Message
                   </label>
                   <textarea
                     {...register('message', { required: true })}
                     rows={4}
-                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white resize-none"
                     placeholder="Your message..."
                   />
-                  {errors.message && <p className="text-red-500 text-sm mt-1">Message is required</p>}
+                  {errors.message && <p className="text-red-500 text-xs mt-1">Message is required</p>}
                 </div>
                 
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+                  className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 font-medium"
                 >
                   Send Message
                 </button>
               </form>
-            </motion.div>            {/* Social Links */}
+            </motion.div>            {/* Social Buttons - 30% */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex flex-col justify-center items-center"
+              className="w-full lg:w-[30%] flex flex-row lg:flex-col gap-6 justify-center items-center h-full"
             >
-              <div className="grid grid-cols-2 gap-6">
-                {/* LinkedIn Button */}
-                <motion.a
-                  href="https://www.linkedin.com/in/brady-park-9a5469208/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-24 h-24 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group"
-                >
-                  <FiLinkedin className="w-10 h-10 text-white group-hover:scale-110 transition-transform" />
-                </motion.a>
+              {/* LinkedIn Button */}
+              <motion.a
+                href="https://www.linkedin.com/in/brady-park-9a5469208/"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-32 h-32 lg:w-40 lg:h-40 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all duration-300"
+              >
+                <FiLinkedin className="w-12 h-12 lg:w-16 lg:h-16 text-white" />
+              </motion.a>
 
-                {/* GitHub Button */}
-                <motion.a
-                  href="https://github.com/bradyp19"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-24 h-24 bg-gradient-to-br from-gray-700 to-gray-800 dark:from-gray-600 dark:to-gray-700 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group"
-                >
-                  <FiGithub className="w-10 h-10 text-white group-hover:scale-110 transition-transform" />
-                </motion.a>
-              </div>
+              {/* GitHub Button */}
+              <motion.a
+                href="https://github.com/bradyp19"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-32 h-32 lg:w-40 lg:h-40 bg-gradient-to-br from-gray-700 to-gray-800 dark:from-gray-600 dark:to-gray-700 rounded-lg flex items-center justify-center shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all duration-300"
+              >
+                <FiGithub className="w-12 h-12 lg:w-16 lg:h-16 text-white" />
+              </motion.a>
             </motion.div>
           </div>
-        </div>      </section>      {/* Footer */}
+        </div>
+      </section>{/* Footer */}
       <footer className="bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Main Footer Content */}
