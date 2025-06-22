@@ -113,7 +113,7 @@ const experience = [
     company: 'GuidePoint Security',
     period: 'Jan 2025 - Apr 2025',
     location: 'Remote',
-    description: 'Built and optimized security operations infrastructure and automation solutions.',
+    description: 'Built and optimized security operations infrastructure and automation solutions part of a project-based learning program (CCI).',
     achievements: [
       'Developed simulated SOC environment using Kubernetes and Docker',
       'Integrated Splunk and automated security log processing',
@@ -126,7 +126,7 @@ const experience = [
     company: 'Technology Strategy Group',
     period: 'Jan 2025 - Present',
     location: 'Charlottesville, VA',
-    description: 'Scaled student-run tech consulting organization through operational improvements and partnerships.',
+    description: 'Scaled student-run tech consulting organization through operational improvements and partnerships. (100+ clients, 50+ consultants)',
     achievements: [
       'Implemented JIRA for project management',
       'Launched new organization website',
@@ -138,7 +138,7 @@ const experience = [
     company: 'INTEREL',
     period: 'Dec 2024 - Jan 2025',
     location: 'Dubai, UAE',
-    description: 'Developed AI-based IoT solutions for the hospitality industry.',
+    description: 'Developed AI-based IoT solutions for the smart building hospitality industry (100,000+ units, 300+ countries',
     achievements: [
       'Built smart occupancy detection system without hardware dependencies',
       'Implemented POC in 250-room hotel',
@@ -392,17 +392,24 @@ export default function HomePage() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
-          >            <div className="px-4 py-2 space-y-2">
+          >            <div className="px-4 py-3 space-y-1">
               {['About', 'Experience', 'Achievements', 'Projects', 'Skills'].map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}
-                  className="block px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                  className="block px-3 py-2.5 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item}
                 </a>
               ))}
+              <button
+                onClick={toggleDarkMode}
+                className="w-full flex items-center px-3 py-2.5 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md transition-colors"
+              >
+                {darkMode ? <FiSun className="w-4 h-4 mr-2" /> : <FiMoon className="w-4 h-4 mr-2" />}
+                {darkMode ? 'Light Mode' : 'Dark Mode'}
+              </button>
             </div>
           </motion.div>
         )}
@@ -413,19 +420,19 @@ export default function HomePage() {
         className="fixed top-16 left-0 right-0 h-1 bg-blue-600 transform origin-left z-40"
       />
         {/* Hero Section */}
-      <section id="hero" ref={heroRef} className="min-h-screen flex items-center bg-white dark:bg-gray-900 pt-16">
-        <div className="w-full flex">
+      <section id="hero" ref={heroRef} className="min-h-screen flex flex-col lg:flex-row items-center bg-white dark:bg-gray-900 pt-16">
+        <div className="w-full flex flex-col lg:flex-row">
           {/* Hero Left - Portrait */}          <motion.div
             initial={{ opacity: 0, scale: 1.05 }}
             animate={heroInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-            className="w-[40%] h-screen relative"
+            className="w-full lg:w-[40%] h-[50vh] lg:h-screen relative order-1 lg:order-1"
           >            <Image
               src="/portrait.jpg"
               alt="Brady Park"
               fill
               quality={100}
-              sizes="(max-width: 768px) 100vw, 40vw"
+              sizes="(max-width: 1024px) 100vw, 40vw"
               className="object-cover object-center"
               priority
               unoptimized
@@ -437,7 +444,7 @@ export default function HomePage() {
             initial={{ opacity: 0, x: 30 }}
             animate={heroInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
-            className="w-[60%] h-screen flex flex-col justify-center px-16 relative"
+            className="w-full lg:w-[60%] min-h-[50vh] lg:h-screen flex flex-col justify-center px-4 sm:px-8 lg:px-16 py-8 lg:py-0 relative order-2 lg:order-2"
           >
             {/* Subtle Background Accent */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -458,12 +465,12 @@ export default function HomePage() {
                 />
               </svg>
             </div>            {/* Main Content */}
-            <div className="relative z-10 text-center px-8">
+            <div className="relative z-10 text-center px-4 sm:px-8">
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={heroInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="text-5xl font-bold text-gray-900 dark:text-white mb-8"
+                className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 lg:mb-8"
                 style={{ 
                   textShadow: '0 2px 4px rgba(0, 0, 0, 0.05)', 
                   filter: 'drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1))' 
@@ -476,14 +483,14 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={heroInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="mt-6 mb-10"
-              >                <div className="flex items-center justify-center gap-4 mb-4">
-                  {/* Left Knight Icon */}
+                className="mt-4 lg:mt-6 mb-6 lg:mb-10"
+              >                <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 mb-4">
+                  {/* Left Knight Icon - Hidden on mobile */}
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
-                    className="flex items-center"
+                    className="hidden sm:flex items-center"
                   >
                     <div className="relative flex items-center justify-center">
                       <Image
@@ -498,16 +505,16 @@ export default function HomePage() {
                   </motion.div>
 
                   {/* Text Content */}
-                  <h2 className="text-2xl font-medium text-gray-600 dark:text-gray-400">
+                  <h2 className="text-lg sm:text-xl lg:text-2xl font-medium text-gray-600 dark:text-gray-400 text-center">
                      Product Strategy meets Technical Execution
                   </h2>
 
-                  {/* Right Rocket Icon */}
+                  {/* Right Rocket Icon - Hidden on mobile */}
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
-                    className="flex items-center"
+                    className="hidden sm:flex items-center"
                   >
                     <div className="relative flex items-center justify-center">                      <Image 
                         src="/icons/rocket.svg"
@@ -531,7 +538,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={heroInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.7 }}
-                className="text-xl text-blue-600 dark:text-blue-400 font-medium mb-8 leading-relaxed"
+                className="text-lg sm:text-xl lg:text-xl text-blue-600 dark:text-blue-400 font-medium mb-6 lg:mb-8 leading-relaxed px-4"
               >
                 Developer. Strategist. Pickleball enthusiast. Faith and curiosity at the core.
               </motion.p>
@@ -540,7 +547,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={heroInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.8 }}
-                className="text-lg italic text-gray-600 dark:text-gray-400 mb-20"
+                className="text-base sm:text-lg italic text-gray-600 dark:text-gray-400 mb-12 lg:mb-20 px-4"
               >
                 QuestBridge & Echols Scholar at UVA, crafting and scaling AI data-driven solutions.
               </motion.p>              {/* Feature Grid */}
@@ -557,7 +564,7 @@ export default function HomePage() {
                     }
                   }
                 }}
-                className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8 max-w-3xl mx-auto px-4"
+                className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-10 max-w-3xl mx-auto px-4"
               >                {[
                   {
                     title: 'About',
@@ -594,15 +601,15 @@ export default function HomePage() {
                         }
                       }
                     }}                    whileHover={{ scale: 1.03, y: -3 }}
-                    className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-md rounded-2xl shadow-md hover:shadow-xl p-8 cursor-pointer transition-all duration-300 border border-gray-100/50 dark:border-gray-700/50 hover:border-blue-200/50 dark:hover:border-blue-700/50"
+                    className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-md rounded-2xl shadow-md hover:shadow-xl p-4 sm:p-6 lg:p-8 cursor-pointer transition-all duration-300 border border-gray-100/50 dark:border-gray-700/50 hover:border-blue-200/50 dark:hover:border-blue-700/50"
                   >                    {/* Card Header with Icon Space */}
-                    <div className="flex items-start gap-4 mb-6">                      {/* Icon */}
-                      <div className="w-10 h-10 mt-1 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-6">                      {/* Icon */}
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 mt-1 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
                         <Image 
                           src={card.icon}
                           alt={`${card.title} icon`}
-                          width={28}
-                          height={28}
+                          width={24}
+                          height={24}
                           className="opacity-70 dark:opacity-90"
                           style={{ filter: 'grayscale(0.2)' }}
                         />
@@ -610,10 +617,10 @@ export default function HomePage() {
                       
                       {/* Card Content */}
                       <div className="flex-1">
-                        <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3 leading-tight">
+                        <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2 sm:mb-3 leading-tight">
                           {card.title}
                         </h3>
-                        <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
                           {card.subtitle}
                         </p>
                       </div>
@@ -625,42 +632,41 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>      {/* Affiliated With Section */}
-      <section ref={affiliatedRef} className="py-20 bg-white dark:bg-gray-900">
+      <section ref={affiliatedRef} className="py-12 sm:py-16 lg:py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Enhanced Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={affiliatedInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-8 sm:mb-12 lg:mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4">
               Affiliated with
             </h2>
-            <div className="w-32 h-1 bg-blue-600 dark:bg-blue-400 mx-auto rounded-full"></div>
+            <div className="w-24 sm:w-32 h-1 bg-blue-600 dark:bg-blue-400 mx-auto rounded-full"></div>
           </motion.div>
 
           {/* Logo Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
-            {/* University of Virginia */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={affiliatedInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 }}
               whileHover={{ 
-                scale: 1.08,
+                scale: 1.05,
                 filter: "brightness(1.1)",
                 boxShadow: "0 10px 25px rgba(0,0,0,0.1)"
               }}
-              className="flex items-center justify-center h-28 p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+              className="flex items-center justify-center h-20 sm:h-24 lg:h-28 p-4 sm:p-6 bg-gray-50 dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <Image
                 src="/logos/uva.svg"
                 alt="University of Virginia"
                 width={0}
                 height={100}
-                className="h-24 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                style={{ width: 'auto', height: '96px' }}
+                className="h-16 sm:h-20 lg:h-24 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                style={{ width: 'auto', height: '80px' }}
                 priority
               />
             </motion.div>
@@ -671,19 +677,19 @@ export default function HomePage() {
               animate={affiliatedInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
               whileHover={{ 
-                scale: 1.08,
+                scale: 1.05,
                 filter: "brightness(1.1)",
                 boxShadow: "0 10px 25px rgba(0,0,0,0.1)"
               }}
-              className="flex items-center justify-center h-28 p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+              className="flex items-center justify-center h-20 sm:h-24 lg:h-28 p-4 sm:p-6 bg-gray-50 dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <Image
                 src="/logos/strategy.svg"
                 alt="Strategy One (MicroStrategy)"
                 width={0}
                 height={80}
-                className="h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                style={{ width: 'auto', height: '80px' }}
+                className="h-12 sm:h-16 lg:h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                style={{ width: 'auto', height: '64px' }}
                 priority
               />
             </motion.div>
@@ -694,26 +700,27 @@ export default function HomePage() {
               animate={affiliatedInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
               whileHover={{ 
-                scale: 1.08,
+                scale: 1.05,
                 filter: "brightness(1.1)",
                 boxShadow: "0 10px 25px rgba(0,0,0,0.1)"
               }}
-              className="flex items-center justify-center h-28 p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+              className="flex items-center justify-center h-20 sm:h-24 lg:h-28 p-4 sm:p-6 bg-gray-50 dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 sm:col-span-2 lg:col-span-1"
             >
               <Image
                 src="/logos/tsg.svg"
                 alt="Technology Strategy Group"
                 width={0}
                 height={100}
-                className="h-24 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                style={{ width: 'auto', height: '96px' }}
+                className="h-16 sm:h-20 lg:h-24 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                style={{ width: 'auto', height: '80px' }}
                 priority
               />
             </motion.div>
           </div>
         </div>
       </section>      {/* About Section */}
-      <section id="about" ref={aboutRef} className="py-20 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">        {/* Decorative Background Pattern - Puzzle & Gears */}
+      <section id="about" ref={aboutRef} className="py-12 sm:py-16 lg:py-20 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
+        {/* Decorative Background Pattern - Puzzle & Gears */}
         <div className="absolute inset-0 pointer-events-none">          {/* Top Row */}
           <motion.div
             animate={{ rotate: 360 }}
@@ -819,29 +826,31 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={aboutInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">About Me</h2>            <div className="relative">
-              <p className="text-xl text-gray-600 dark:text-gray-400 max-w-4xl mx-auto">
-                Always asking, never settling, building what’s next.
+            className="text-center mb-8 sm:mb-12 lg:mb-16"
+          >
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">About Me</h2>
+            <div className="relative">
+              <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-4xl mx-auto px-4">
+                Always asking, never settling, building what's next.
               </p>
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 items-start">
             {/* Story Content */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={aboutInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="lg:col-span-2 space-y-8"
+              className="lg:col-span-2 space-y-6 sm:space-y-8"
             >
               {/* Origins */}
-              <div>
-                <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-3 flex items-center">
+              <div className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg">
+                <h3 className="text-lg sm:text-xl font-semibold text-blue-600 dark:text-blue-400 mb-3 flex items-center">
                   <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mr-3"></div>
                   Origins
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
                   I was always that kid asking too many questions in class, pulling things apart just to see how they worked. 
                   I discovered Scratch at the age of 10 and it was game over for me. By the time I finished elementary school, 
                   I had built multiple games that hit the front page, racking up 70,000 plays and 20,000 favorites.
@@ -903,16 +912,16 @@ export default function HomePage() {
           </div>
         </div>
       </section>      {/* Experience Section */}
-      <section id="experience" ref={experienceRef} className="py-20 bg-gray-50 dark:bg-gray-800">
+      <section id="experience" ref={experienceRef} className="py-12 sm:py-16 lg:py-20 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={experienceInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-8 sm:mb-12 lg:mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Experience</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">Experience</h2>
+            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 px-4">
              From one obsession to the next, here's the map so far.
             </p>
           </motion.div>
@@ -921,7 +930,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={experienceInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-4"
+            className="grid grid-cols-1 gap-4 sm:gap-6"
           >
             {experience.map((exp, index) => (
               <motion.div
@@ -937,18 +946,18 @@ export default function HomePage() {
                       alt={`${exp.company} logo`}
                       width={60}
                       height={60}
-                      className="object-contain opacity-80"
+                      className="w-12 h-12 sm:w-14 sm:h-14 object-contain opacity-80"
                     />
                   </div>
                 )}
-                <div className="pr-20">
-                  <h3 className="text-base font-bold text-gray-900 dark:text-white">
+                <div className="pr-16 sm:pr-20">
+                  <h3 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white mb-1">
                     {exp.title}
                   </h3>
-                  <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-1">
+                  <p className="text-sm sm:text-base font-semibold text-blue-600 dark:text-blue-400 mb-2">
                     {exp.company}
                   </p>
-                  <div className="flex items-center gap-3 text-xs text-gray-600 dark:text-gray-400 mb-2">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-3">
                     <span className="flex items-center">
                       <Calendar className="w-3 h-3 mr-1" />
                       {exp.period}
@@ -958,15 +967,15 @@ export default function HomePage() {
                       {exp.location}
                     </span>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">{exp.description}</p>
+                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-3 leading-relaxed">{exp.description}</p>
                   
                   <div>
-                    <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-1">Achievements:</h4>
-                    <ul className="grid grid-cols-1 gap-1">
+                    <h4 className="text-sm sm:text-base font-semibold text-gray-900 dark:text-white mb-2">Achievements:</h4>
+                    <ul className="grid grid-cols-1 gap-1.5">
                       {exp.achievements.map((achievement) => (
                         <li key={`${exp.company}-${achievement}`} className="flex items-start">
-                          <Star className="w-3 h-3 text-yellow-500 mr-1 mt-0.5 flex-shrink-0" />
-                          <span className="text-xs text-gray-600 dark:text-gray-400">{achievement}</span>
+                          <Star className="w-3 h-3 text-yellow-500 mr-2 mt-0.5 flex-shrink-0" />
+                          <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{achievement}</span>
                         </li>
                       ))}
                     </ul>
@@ -979,16 +988,16 @@ export default function HomePage() {
       </section>
 
       {/* Achievements Section */}
-      <section id="achievements" ref={achievementsRef} className="py-20 bg-white dark:bg-gray-900">
+      <section id="achievements" ref={achievementsRef} className="py-12 sm:py-16 lg:py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={achievementsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-8 sm:mb-12 lg:mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Achievements</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">Achievements</h2>
+            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto px-4">
               Boss fights won, levels completed, and badges earned.
             </p>
           </motion.div>
@@ -998,7 +1007,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={achievementsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12 lg:mb-16"
           >
             {achievements.map((achievement, index) => (
               <motion.div
@@ -1006,38 +1015,40 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={achievementsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow relative overflow-hidden"
+                className="bg-gray-50 dark:bg-gray-800 rounded-lg sm:rounded-xl p-4 sm:p-6 text-center shadow-lg hover:shadow-xl transition-shadow relative overflow-hidden"
               >                {achievement.logo && (
-                  <div className={`absolute top-4 right-4 ${achievement.logoStyle === 'prominent' ? 'opacity-30' : 'opacity-10'}`}>
+                  <div className={`absolute top-3 right-3 sm:top-4 sm:right-4 ${achievement.logoStyle === 'prominent' ? 'opacity-30' : 'opacity-10'}`}>
                     <Image
                       src={achievement.logo}
                       alt="Organization logo"
-                      width={achievement.logoStyle === 'prominent' ? 60 : 40}
-                      height={achievement.logoStyle === 'prominent' ? 60 : 40}
-                      className="object-contain"
+                      width={achievement.logoStyle === 'prominent' ? 50 : 35}
+                      height={achievement.logoStyle === 'prominent' ? 50 : 35}
+                      className="object-contain w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12"
                     />
                   </div>
                 )}
-                <Trophy className="w-12 h-12 text-yellow-500 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{achievement.title}</h3>
-                <p className="text-blue-600 dark:text-blue-400 font-semibold mb-2">{achievement.organization}</p>
+                <Trophy className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-yellow-500 mx-auto mb-3 sm:mb-4" />
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">{achievement.title}</h3>
+                <p className="text-blue-600 dark:text-blue-400 font-semibold mb-2 text-sm sm:text-base">{achievement.organization}</p>
                 {achievement.associatedOrg && (
                   <div className="flex flex-col items-center justify-center gap-2 mb-2">
-                    <div className="flex items-center justify-center gap-2">                      {achievement.associatedLogo && (
+                    <div className="flex items-center justify-center gap-2">
+                      {achievement.associatedLogo && (
                         <Image
                           src={achievement.associatedLogo}
                           alt={`${achievement.associatedOrg} logo`}
-                          width={20}
-                          height={20}
-                          className="opacity-70"
+                          width={16}
+                          height={16}
+                          className="opacity-70 w-4 h-4"
                         />
                       )}
-                      <p className="text-sm text-gray-600 dark:text-gray-400">
-                        Associated with {achievement.associatedOrg}                      </p>
+                      <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+                        Associated with {achievement.associatedOrg}
+                      </p>
                     </div>
                   </div>
                 )}
-                <p className="text-gray-700 dark:text-gray-300">{achievement.description}</p>
+                <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">{achievement.description}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -1047,7 +1058,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={achievementsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
           >
             {featureCards.map((card, index) => (
               <motion.div
@@ -1055,71 +1066,75 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={achievementsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-center relative"
+                className="bg-white dark:bg-gray-800 rounded-lg sm:rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-center relative"
               >
-                <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gray-100 dark:bg-gray-700 rounded-lg sm:rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
                   <Image
                     src={card.icon}
                     alt={`${card.title} icon`}
-                    width={32}
-                    height={32}
-                    className="opacity-70 dark:opacity-90"
+                    width={24}
+                    height={24}
+                    className="opacity-70 dark:opacity-90 w-6 h-6 sm:w-8 sm:h-8"
                     style={{ filter: 'grayscale(0.2)' }}
                   />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{card.title}</h3>
+                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3">{card.title}</h3>
                 {card.associatedOrg && (
-                  <div className="flex items-center justify-center gap-2 mb-2">
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 mb-2">
                     {card.associatedLogo && (
                       <Image
                         src={card.associatedLogo}
                         alt="Associated organization logo"
-                        width={20}
-                        height={20}
-                        className="opacity-70"
+                        width={16}
+                        height={16}
+                        className="opacity-70 w-4 h-4"
                       />
                     )}
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                    <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 text-center">
                       Associated with {card.associatedOrg}
                     </p>
                     {card.secondaryLogo && (
                       <Image
                         src={card.secondaryLogo}
                         alt="Secondary organization logo"
-                        width={20}
-                        height={20}
-                        className="opacity-70 ml-1"
+                        width={16}
+                        height={16}
+                        className="opacity-70 w-4 h-4 sm:ml-1"
                       />
                     )}
                   </div>
                 )}
-                <p className="text-gray-600 dark:text-gray-400">{card.description}</p>
+                <p className="text-xs sm:text-sm lg:text-base text-gray-600 dark:text-gray-400 leading-relaxed">{card.description}</p>
               </motion.div>
             ))}
           </motion.div>        </div>
       </section>
 
       {/* Projects Section */}
-      <section id="projects" ref={projectsRef} className="py-20 bg-gray-50 dark:bg-gray-800">
+      <section id="projects" ref={projectsRef} className="py-12 sm:py-16 lg:py-20 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={projectsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-8 sm:mb-12 lg:mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4"> Projects</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4"> Projects</h2>
+            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 px-4">
               Where curiosity meets Celsius & questionable sleep schedules.
             </p>
-          </motion.div>          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project, index) => (                <motion.div
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {projects.map((project, index) => (
+              <motion.div
                 key={project.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={projectsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full"
-                ><div className="relative h-48 bg-gray-100 dark:bg-gray-700 overflow-hidden">
+              >
+                <div className="relative h-40 sm:h-48 bg-gray-100 dark:bg-gray-700 overflow-hidden">
                   {project.image ? (
                     <Image
                       src={project.image}
@@ -1132,7 +1147,7 @@ export default function HomePage() {
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center">
-                        <FiCode className="w-8 h-8 text-blue-600 dark:text-blue-400 mx-auto mb-1" />
+                        <FiCode className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600 dark:text-blue-400 mx-auto mb-1" />
                         <span className="text-xs text-gray-600 dark:text-gray-400">Project Preview</span>
                       </div>
                     </div>
@@ -1142,12 +1157,14 @@ export default function HomePage() {
                       {project.category}
                     </span>
                   </div>
-                </div>                <div className="p-4 flex flex-col h-full">
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">{project.title}</h3>
+                </div>
+
+                <div className="p-4 sm:p-6 flex flex-col h-full">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1">{project.title}</h3>
                   {project.subtitle && (
-                    <p className="text-blue-600 dark:text-blue-400 font-medium mb-2 text-sm">{project.subtitle}</p>
+                    <p className="text-blue-600 dark:text-blue-400 font-medium mb-2 text-sm sm:text-base">{project.subtitle}</p>
                   )}
-                  <p className="text-gray-600 dark:text-gray-400 mb-3 leading-relaxed text-sm line-clamp-4 flex-grow">
+                  <p className="text-gray-600 dark:text-gray-400 mb-3 leading-relaxed text-sm sm:text-base line-clamp-4 flex-grow">
                     {project.description.length > 150 ? project.description.substring(0, 150) + '...' : project.description}
                   </p>
                   
@@ -1167,7 +1184,7 @@ export default function HomePage() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-xs font-medium flex items-center justify-center w-full max-w-[200px] h-10"
+                      className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-xs sm:text-sm font-medium flex items-center justify-center w-full max-w-[200px] h-10"
                     >
                       {project.title === 'Ouroboros' ? (
                         <>
@@ -1183,28 +1200,28 @@ export default function HomePage() {
                     </a>
                   </div>
                 </div>
-                </motion.div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* What I Devote My Other Time To Section */}
-      <section id="skills" ref={skillsRef} className="py-20 bg-white dark:bg-gray-900">
+      <section id="skills" ref={skillsRef} className="py-12 sm:py-16 lg:py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={skillsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-8 sm:mb-12 lg:mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">What I Devote My Other Time To</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">What I Devote My Other Time To</h2>
+            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 px-4">
               The passions and activities I pursue in my freetime.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {[
               {
                 name: "Fellowshipping",
@@ -1225,7 +1242,7 @@ export default function HomePage() {
               {
                 name: "Sports",
                 icon: "/icons/basketball.svg",
-                description: "Pickleball, Basketball, Tennis, Flag Football, Spikeball, casually of course.",
+                description: "Pickleball, basketball, and boxing are my favorites.",
                 dedication: 83,
                 color: "from-yellow-500 to-orange-500",
                 bgColor: "bg-yellow-50 dark:bg-yellow-900/20"
@@ -1233,7 +1250,7 @@ export default function HomePage() {
               {
                 name: "Practicing Instruments",
                 icon: "/icons/guitar.svg",
-                description: "Electric (Les Paul) & Acoustic (Martin), vocals, keys and drums (novice)",
+                description: "Electric (Les Paul) & acoustic guitar, vocals, keys and drums (novice)",
                 dedication: 80,
                 color: "from-blue-500 to-cyan-500",
                 bgColor: "bg-blue-50 dark:bg-blue-900/20"
@@ -1260,44 +1277,44 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={skillsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`group relative p-6 ${activity.bgColor} backdrop-blur-sm rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-2`}
+                className={`group relative p-4 sm:p-6 ${activity.bgColor} backdrop-blur-sm rounded-xl sm:rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-2`}
               >
                 {/* Gradient overlay on hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${activity.color} rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
+                <div className={`absolute inset-0 bg-gradient-to-br ${activity.color} rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
                 
                 <div className="relative">
                   {/* Icon and Title */}
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className={`flex-shrink-0 w-14 h-14 bg-gradient-to-br ${activity.color} rounded-xl flex items-center justify-center shadow-lg`}>
+                  <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
+                    <div className={`flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br ${activity.color} rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg`}>
                       <Image
                         src={activity.icon}
                         alt={`${activity.name} icon`}
-                        width={28}
-                        height={28}
-                        className="w-7 h-7 opacity-90 filter brightness-0 invert"
+                        width={24}
+                        height={24}
+                        className="w-6 h-6 sm:w-7 sm:h-7 opacity-90 filter brightness-0 invert"
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+                      <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-1">
                         {activity.name}
                       </h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                      <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                         {activity.description}
                       </p>
                     </div>
                   </div>
 
                   {/* Joy & Dedication Meter */}
-                  <div className="space-y-3">
+                  <div className="space-y-2 sm:space-y-3">
                     <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                      <span className="text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300">
                         Joy & Dedication
                       </span>
                       <div className="flex items-center gap-1">
                         {[...Array(5)].map((_, i) => (
                           <div
                             key={i}
-                            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                            className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 ${
                               i < Math.floor(activity.dedication / 20)
                                 ? `bg-gradient-to-r ${activity.color}`
                                 : 'bg-gray-200 dark:bg-gray-600'
@@ -1308,7 +1325,7 @@ export default function HomePage() {
                     </div>
                     
                     {/* Progress Bar */}
-                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 sm:h-3 overflow-hidden">
                       <motion.div
                         className={`h-full bg-gradient-to-r ${activity.color} rounded-full relative`}
                         initial={{ width: 0 }}
@@ -1322,7 +1339,7 @@ export default function HomePage() {
                   </div>
 
                   {/* Floating elements for extra visual interest */}
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-white dark:bg-gray-800 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110">
+                  <div className="absolute -top-2 -right-2 w-5 h-5 sm:w-6 sm:h-6 bg-white dark:bg-gray-800 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110">
                     <div className={`w-full h-full bg-gradient-to-br ${activity.color} rounded-full animate-pulse`}></div>
                   </div>
                 </div>
@@ -1331,35 +1348,36 @@ export default function HomePage() {
           </div>
         </div>
       </section>      {/* Contact Section */}
-      <section id="contact" className="py-12 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">          {/* Enhanced Header */}
+      <section id="contact" className="py-8 sm:py-10 lg:py-12 bg-gray-50 dark:bg-gray-800">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Enhanced Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-8 py-6 bg-white dark:bg-gray-900 rounded-xl"
+            className="text-center mb-6 sm:mb-8 py-4 sm:py-6 bg-white dark:bg-gray-900 rounded-lg sm:rounded-xl px-4"
           >
-            <h2 className="text-3xl font-light tracking-wide text-gray-800 dark:text-gray-100">Open to new ideas, feedback, or collaborations</h2>
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-light tracking-wide text-gray-800 dark:text-gray-100">Open to new ideas, feedback, or collaborations</h2>
           </motion.div>
 
-          {/* 70-30 Layout */}
-          <div className="flex flex-col lg:flex-row gap-3 items-center">
-            {/* Contact Form - 70% */}
+          {/* Layout */}
+          <div className="flex flex-col lg:flex-row gap-3 items-stretch">
+            {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="w-full lg:w-[70%] bg-white dark:bg-gray-900 rounded-lg p-6 shadow-md"
+              className="w-full lg:w-[70%] bg-white dark:bg-gray-900 rounded-lg p-4 sm:p-6 shadow-md"
             >
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                       Name
                     </label>
                     <input
                       {...register('name', { required: true })}
-                      className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
+                      className="w-full px-3 py-2 text-sm sm:text-base border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
                       placeholder="Your name"
                     />
                     {errors.name && <p className="text-red-500 text-xs mt-1">Name is required</p>}
@@ -1371,8 +1389,7 @@ export default function HomePage() {
                     </label>
                     <input
                       {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
-                      type="email"
-                      className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
+                      className="w-full px-3 py-2 text-sm sm:text-base border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
                       placeholder="your@email.com"
                     />
                     {errors.email && <p className="text-red-500 text-xs mt-1">Valid email is required</p>}
@@ -1386,36 +1403,38 @@ export default function HomePage() {
                   <textarea
                     {...register('message', { required: true })}
                     rows={4}
-                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white resize-none"
-                    placeholder="Your message..."
+                    className="w-full px-3 py-2 text-sm sm:text-base border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white resize-vertical"
+                    placeholder="Tell me about your project or idea..."
                   />
                   {errors.message && <p className="text-red-500 text-xs mt-1">Message is required</p>}
                 </div>
                 
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 font-medium"
+                  className="w-full sm:w-auto bg-blue-600 text-white py-2 px-6 rounded-md hover:bg-blue-700 transition-colors text-sm sm:text-base font-medium"
                 >
                   Send Message
                 </button>
               </form>
-            </motion.div>            {/* Social Buttons - 30% */}
+            </motion.div>
+
+            {/* Social Links */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="w-full lg:w-[30%] flex flex-row lg:flex-col gap-6 justify-center items-center h-full"
+              className="w-full lg:w-[30%] space-y-3"
             >
               {/* LinkedIn Button */}
               <motion.a
-                href="https://www.linkedin.com/in/brady-park-9a5469208/"
+                href="https://www.linkedin.com/in/brady-park-9ab3bb212/"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-32 h-32 lg:w-40 lg:h-40 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all duration-300"
+                className="w-full h-24 sm:h-28 lg:h-32 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300"
               >
-                <FiLinkedin className="w-12 h-12 lg:w-16 lg:h-16 text-white" />
+                <FiLinkedin className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-white" />
               </motion.a>
 
               {/* GitHub Button */}
@@ -1425,18 +1444,19 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-32 h-32 lg:w-40 lg:h-40 bg-gradient-to-br from-gray-700 to-gray-800 dark:from-gray-600 dark:to-gray-700 rounded-lg flex items-center justify-center shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all duration-300"
+                className="w-full h-24 sm:h-28 lg:h-32 bg-gradient-to-br from-gray-700 to-gray-800 dark:from-gray-600 dark:to-gray-700 rounded-lg flex items-center justify-center shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all duration-300"
               >
-                <FiGithub className="w-12 h-12 lg:w-16 lg:h-16 text-white" />
+                <FiGithub className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-white" />
               </motion.a>
             </motion.div>
           </div>
         </div>
-      </section>{/* Footer */}
+      </section>
+      {/* Footer */}
       <footer className="bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Main Footer Content */}
-          <div className="py-8">
+          <div className="py-6 sm:py-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -1447,12 +1467,12 @@ export default function HomePage() {
           </div>
 
           {/* Bottom Bar */}
-          <div className="border-t border-gray-200 dark:border-gray-700 py-4">
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
-              <p className="text-gray-500 dark:text-gray-400 text-sm">
+          <div className="border-t border-gray-200 dark:border-gray-700 py-3 sm:py-4">
+            <div className="flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0 text-center sm:text-left">
+              <p className="text-gray-500 dark:text-gray-400 text-xs sm:text-sm">
                 © 2025 Brady Park. All rights reserved.
               </p>
-              <div className="flex items-center space-x-1 text-gray-500 dark:text-gray-400 text-sm">
+              <div className="flex items-center space-x-1 text-gray-500 dark:text-gray-400 text-xs sm:text-sm">
                 <span>Built with</span>
                 <motion.span
                   animate={{ scale: [1, 1.2, 1] }}
@@ -1474,9 +1494,9 @@ export default function HomePage() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-40"
+          className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 bg-blue-600 text-white p-2.5 sm:p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-40"
         >
-          <FiArrowUp className="w-5 h-5" />
+          <FiArrowUp className="w-4 h-4 sm:w-5 sm:h-5" />
         </motion.button>
       )}
     </div>
