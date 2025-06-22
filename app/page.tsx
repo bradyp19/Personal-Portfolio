@@ -469,7 +469,7 @@ export default function HomePage() {
                   filter: 'drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1))' 
                 }}
               >
-                Brady William Park
+                Brady William 종민 Park
               </motion.h1>
               
               <motion.div
@@ -531,7 +531,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={heroInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.7 }}
-                className="text-lg text-blue-600 dark:text-blue-400 font-medium mb-8 leading-relaxed"
+                className="text-xl text-blue-600 dark:text-blue-400 font-medium mb-8 leading-relaxed"
               >
                 Developer. Strategist. Pickleball enthusiast. Faith and curiosity at the core.
               </motion.p>
@@ -540,9 +540,9 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={heroInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.8 }}
-                className="text-base italic text-gray-600 dark:text-gray-400 mb-20"
+                className="text-lg italic text-gray-600 dark:text-gray-400 mb-20"
               >
-                First-gen builder, QuestBridge & Echols Scholar, now designing AI-driven products that actually matter.
+                QuestBridge & Echols Scholar at UVA, crafting and scaling AI data-driven solutions.
               </motion.p>              {/* Feature Grid */}
               <motion.div
                 initial="hidden"
