@@ -39,7 +39,7 @@ const projects = [
     subtitle: 'OSS repository vulnerability scanner',
     tech: ['Python', 'FastAPI', 'React.js', 'GitHub Actions', 'Heroku', 'Cloudflare Pages'],
     category: 'Security',
-    github: 'https://github.com/bradyp19/diffsentry',
+    github: 'https://github.com/asatpathy314/diff-sentry',
     image: '/previews/diffsentry.png'
   },
   {
@@ -1189,6 +1189,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* What I Devote My Other Time To Section */}
       <section id="skills" ref={skillsRef} className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -1197,38 +1198,132 @@ export default function HomePage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Skills & Expertise</h2>
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">What I Devote My Other Time To</h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">
-              What I bring when I show up—besides just code (lol).
+              The passions and activities I pursue in my freetime.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {skills.map((skill, index) => (
+            {[
+              {
+                name: "Fellowshipping",
+                icon: "/icons/cross.svg",
+                description: "GCF, XA, Center Church, & ODPC Salt",
+                dedication: 100,
+                color: "from-indigo-500 to-purple-500",
+                bgColor: "bg-indigo-50 dark:bg-indigo-900/20"
+              },
+              {
+                name: "Lifting Weights",
+                icon: "/icons/dumbbell.svg",
+                description: "6+ years & currently on PPL/Arnold",
+                dedication: 95,
+                color: "from-red-500 to-orange-500",
+                bgColor: "bg-red-50 dark:bg-red-900/20"
+              },
+              {
+                name: "Sports",
+                icon: "/icons/basketball.svg",
+                description: "Pickleball, Basketball, Tennis, Flag Football, Spikeball, casually of course.",
+                dedication: 83,
+                color: "from-yellow-500 to-orange-500",
+                bgColor: "bg-yellow-50 dark:bg-yellow-900/20"
+              },
+              {
+                name: "Practicing Instruments",
+                icon: "/icons/guitar.svg",
+                description: "Electric (Les Paul) & Acoustic (Martin), vocals, keys and drums (novice)",
+                dedication: 80,
+                color: "from-blue-500 to-cyan-500",
+                bgColor: "bg-blue-50 dark:bg-blue-900/20"
+              },
+              {
+                name: "Reading Manga",
+                icon: "/icons/naruto.svg",
+                description: "600+ mangas read.",
+                dedication: 65,
+                color: "from-green-500 to-emerald-500",
+                bgColor: "bg-green-50 dark:bg-green-900/20"
+              },
+              {
+                name: "Choir",
+                icon: "/icons/music.svg",
+                description: "UVA Glee Club, low bass",
+                dedication: 40,
+                color: "from-purple-500 to-pink-500",
+                bgColor: "bg-purple-50 dark:bg-purple-900/20"
+              }
+            ].map((activity, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={skillsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+                className={`group relative p-6 ${activity.bgColor} backdrop-blur-sm rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-2`}
               >
-                <div className="flex justify-between items-center mb-4">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{skill.name}</h3>
-                  <span className="text-sm text-blue-600 dark:text-blue-400 font-medium">{skill.category}</span>
-                </div>
+                {/* Gradient overlay on hover */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${activity.color} rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
                 
-                <div className="mb-2">
-                  <div className="flex justify-between text-sm text-gray-600 dark:text-gray-400 mb-1">
-                    <span>Proficiency</span>
-                    <span>{skill.level}%</span>
+                <div className="relative">
+                  {/* Icon and Title */}
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className={`flex-shrink-0 w-14 h-14 bg-gradient-to-br ${activity.color} rounded-xl flex items-center justify-center shadow-lg`}>
+                      <Image
+                        src={activity.icon}
+                        alt={`${activity.name} icon`}
+                        width={28}
+                        height={28}
+                        className="w-7 h-7 opacity-90 filter brightness-0 invert"
+                      />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+                        {activity.name}
+                      </h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                        {activity.description}
+                      </p>
+                    </div>
                   </div>
-                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      animate={skillsInView ? { width: `${skill.level}%` } : {}}
-                      transition={{ duration: 1, delay: index * 0.1 }}
-                      className="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full"
-                    />
+
+                  {/* Joy & Dedication Meter */}
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                        Joy & Dedication
+                      </span>
+                      <div className="flex items-center gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <div
+                            key={i}
+                            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                              i < Math.floor(activity.dedication / 20)
+                                ? `bg-gradient-to-r ${activity.color}`
+                                : 'bg-gray-200 dark:bg-gray-600'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                    
+                    {/* Progress Bar */}
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
+                      <motion.div
+                        className={`h-full bg-gradient-to-r ${activity.color} rounded-full relative`}
+                        initial={{ width: 0 }}
+                        animate={skillsInView ? { width: `${activity.dedication}%` } : {}}
+                        transition={{ duration: 1.2, delay: index * 0.15 + 0.3 }}
+                      >
+                        {/* Shimmer effect */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 animate-pulse"></div>
+                      </motion.div>
+                    </div>
+                  </div>
+
+                  {/* Floating elements for extra visual interest */}
+                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-white dark:bg-gray-800 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110">
+                    <div className={`w-full h-full bg-gradient-to-br ${activity.color} rounded-full animate-pulse`}></div>
                   </div>
                 </div>
               </motion.div>
@@ -1347,41 +1442,7 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               className="text-center space-y-6"
-            >              {/* Hobby Icons */}
-              <div className="flex justify-center items-center space-x-4 flex-wrap gap-2">
-                {[
-                  'basketball.svg',
-                  'cross.svg', 
-                  'crunchyroll.svg',
-                  'discord.svg',
-                  'dumbbell.svg',
-                  'game.svg',
-                  'gears.svg',
-                  'gears1.svg',
-                  'gears2.svg',
-                  'guitar.svg',
-                  'music.svg',
-                  'naruto.svg',
-                  'transformers.svg'
-                ].map((icon, index) => (
-                  <motion.div
-                    key={icon}
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                    whileHover={{ scale: 1.2, rotate: 5 }}
-                    className="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
-                  >
-                    <Image
-                      src={`/icons/${icon}`}
-                      alt="Hobby icon"
-                      width={24}
-                      height={24}
-                      className="w-6 h-6 opacity-60 hover:opacity-100 transition-opacity"
-                    />
-                  </motion.div>
-                ))}
-              </div>
+            >
             </motion.div>
           </div>
 
