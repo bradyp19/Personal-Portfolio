@@ -42,6 +42,27 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="theme-color" content="#2563eb" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var savedTheme = localStorage.getItem('theme');
+                  var systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  var shouldUseDark = savedTheme ? savedTheme === 'dark' : systemPrefersDark;
+                  
+                  if (shouldUseDark) {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                } catch (e) {
+                  // Fallback for SSR or if localStorage is not available
+                }
+              })();
+            `,
+          }}
+        />
       </head>
       <body className={`${inter.className} antialiased`}>
         {children}
