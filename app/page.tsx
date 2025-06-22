@@ -79,8 +79,10 @@ const projects = [
     subtitle: 'Living sandbox for design and development',
     tech: ['React', 'Next.js', 'Tailwind CSS', 'TypeScript', 'Framer Motion'],
     category: 'Development',
-    github: 'https://github.com/bradyp19/personal-portfolio'
-  },  {
+    github: 'https://github.com/bradyp19/personal-portfolio',
+    image: '/previews/personalportfolio.png'
+  },  
+  {
     id: 6,
     title: 'Ouroboros',
     description: 'A multimedia meditation on cycles and renewal, filmed at Morven Field. Created with Adobe Express Suite, Ouroboros weaves together video, photography, and sound to explore how endings feed new beginnings. The looping, arching tree at its center echoes the eternal return of nature—an invitation to see how every stillness is just part of a larger cycle.',
@@ -531,7 +533,7 @@ export default function HomePage() {
                 transition={{ duration: 0.8, delay: 0.7 }}
                 className="text-lg text-blue-600 dark:text-blue-400 font-medium mb-8 leading-relaxed"
               >
-                Self-made immigrant turned full-ride CS scholar at UVA, now supporting AI & data-driven solutions.
+                Developer. Strategist. Pickleball enthusiast. Faith and curiosity at the core.
               </motion.p>
 
               <motion.p
@@ -540,7 +542,7 @@ export default function HomePage() {
                 transition={{ duration: 0.8, delay: 0.8 }}
                 className="text-base italic text-gray-600 dark:text-gray-400 mb-20"
               >
-                I build scalable products that blend data, design, and real-world impact.
+                First-gen builder, QuestBridge & Echols Scholar, now designing AI-driven products that actually matter.
               </motion.p>              {/* Feature Grid */}
               <motion.div
                 initial="hidden"
