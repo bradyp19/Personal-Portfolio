@@ -1,0 +1,29 @@
+# Node.js Project Dependencies
+
+## Install Node.js first:
+# macOS: brew install node
+# or download from: https://nodejs.org/
+
+## Runtime Dependencies
+next@^14.2.30
+react@^18.3.1
+react-dom@^18.3.1
+framer-motion@^12.18.1
+react-hook-form@^7.58.1
+react-icons@^5.5.0
+react-intersection-observer@^9.16.0
+lucide-react@^0.516.0
+emailjs-com@^3.2.0
+
+## Development Dependencies
+typescript@^5.3.3
+@types/node@^20.11.19
+@types/react@^18.2.57
+@types/react-dom@^18.2.19
+tailwindcss@^3.4.1
+autoprefixer@^10.4.17
+postcss@^8.4.35
+
+## Installation Commands
+# npm install (installs all dependencies from package.json)
+# or manually: npm install <package-name> for each package above
