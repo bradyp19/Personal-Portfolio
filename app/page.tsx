@@ -708,10 +708,9 @@ export default function HomePage() {
               <Image
                 src="/logos/Perplexity-Logo.png"
                 alt="Perplexity AI"
-                width={0}
-                height={80}
-                className="h-12 sm:h-16 lg:h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                style={{ width: 'auto', height: '64px' }}
+                width={160}
+                height={100}
+                className="w-auto h-auto max-h-24 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                 priority
               />
             </motion.div>
@@ -731,10 +730,9 @@ export default function HomePage() {
               <Image
                 src="/logos/opennotelogo.png"
                 alt="Opennote YC S25"
-                width={0}
-                height={80}
-                className="h-12 sm:h-16 lg:h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                style={{ width: 'auto', height: '64px' }}
+                width={160}
+                height={100}
+                className="w-auto h-auto max-h-24 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                 priority
               />
             </motion.div>
