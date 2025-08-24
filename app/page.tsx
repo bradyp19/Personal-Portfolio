@@ -96,6 +96,28 @@ const projects = [
 
 const experience = [
   {
+    title: 'Campus Ambassador',
+    company: 'Opennote',
+    period: 'August 2025 - Current',
+    location: 'Remote',
+    description: 'Scaling YC AI note taking company to east coast as Virginia\'s sole ambassador.',
+    achievements: [
+      'Coming soon...'
+    ],
+    logo: '/logos/opennotelogo.png'
+  },
+  {
+    title: 'Campus Partner',
+    company: 'Perplexity',
+    period: 'August 2025 - Current',
+    location: 'Remote',
+    description: 'Scaling YC AI company to east coast as Virginia\'s sole ambassador.',
+    achievements: [
+      'Coming soon...'
+    ],
+    logo: '/logos/Perplexity-Logo.png'
+  },
+  {
     title: 'Sales Engineering Intern',
     company: 'Strategy (NASDAQ: MSTR)',
     period: 'June 2025 - Aug 2025',
@@ -671,7 +693,7 @@ export default function HomePage() {
               />
             </motion.div>
 
-            {/* Strategy One */}
+            {/* Perplexity */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={affiliatedInView ? { opacity: 1, y: 0 } : {}}
@@ -684,8 +706,31 @@ export default function HomePage() {
               className="flex items-center justify-center h-20 sm:h-24 lg:h-28 p-4 sm:p-6 bg-gray-50 dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <Image
-                src="/logos/strategy.svg"
-                alt="Strategy One (MicroStrategy)"
+                src="/logos/Perplexity-Logo.png"
+                alt="Perplexity AI"
+                width={0}
+                height={80}
+                className="h-12 sm:h-16 lg:h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                style={{ width: 'auto', height: '64px' }}
+                priority
+              />
+            </motion.div>
+
+            {/* Opennote */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={affiliatedInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              whileHover={{ 
+                scale: 1.05,
+                filter: "brightness(1.1)",
+                boxShadow: "0 10px 25px rgba(0,0,0,0.1)"
+              }}
+              className="flex items-center justify-center h-20 sm:h-24 lg:h-28 p-4 sm:p-6 bg-gray-50 dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              <Image
+                src="/logos/opennotelogo.png"
+                alt="Opennote YC S25"
                 width={0}
                 height={80}
                 className="h-12 sm:h-16 lg:h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
@@ -698,7 +743,7 @@ export default function HomePage() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={affiliatedInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
               whileHover={{ 
                 scale: 1.05,
                 filter: "brightness(1.1)",
