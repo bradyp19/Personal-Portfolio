@@ -96,6 +96,30 @@ const projects = [
 
 const experience = [
   {
+    title: 'Product Manager Intern',
+    company: 'GitHub',
+    period: 'May 2026 - Aug 2026',
+    location: 'New York, NY',
+    description: 'Leading product discovery for GitHub’s core migration engine moving 200K+ repositories monthly, defining the FY27 roadmap from Fortune 500 user research.',
+    achievements: [
+      'Converting F500 user research into cross-functional PRDs to shape the FY27 migration roadmap',
+      'Designing a post-migration validation tool using repository checksums to eliminate cutover risk for 43% of GitHub’s top 100 enterprise clients',
+      'Coded agentic AI workflows with Copilot Extensions and MCP to automate inventory mapping, cutting manual enterprise migration planning and runbook overhead by 75%'
+    ],
+    logo: '/logos/github.svg'
+  },
+  {
+    title: 'Incoming Customer Success Engineer Co-Op',
+    company: 'IBM',
+    period: 'Aug 2026 - Dec 2026',
+    location: 'New York, NY',
+    description: 'Incoming customer success engineer on the NYC Financial Markets team.',
+    achievements: [
+      'Joining the NYC Financial Markets team this fall'
+    ],
+    logo: '/logos/ibm.svg'
+  },
+  {
     title: 'Campus Ambassador',
     company: 'Opennote',
     period: 'August 2025 - Current',
@@ -183,7 +207,7 @@ const experience = [
   {
     title: 'Data Structures and Algorithms Teaching Assistant',
     company: 'University of Virginia',
-    period: 'Jan 2024 - Present',
+    period: 'Jan 2024 - Dec 2025',
     location: 'Charlottesville, VA',
     description: 'Supporting 500+ students in DSA courses through instruction and mentorship.',
     achievements: [
@@ -689,6 +713,51 @@ export default function HomePage() {
                 height={100}
                 className="h-16 sm:h-20 lg:h-24 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                 style={{ width: 'auto', height: '80px' }}
+                priority
+              />
+            </motion.div>
+
+            {/* GitHub */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={affiliatedInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              whileHover={{
+                scale: 1.05,
+                filter: "brightness(1.1)",
+                boxShadow: "0 10px 25px rgba(0,0,0,0.1)"
+              }}
+              className="flex items-center justify-center h-20 sm:h-24 lg:h-28 p-4 sm:p-6 bg-gray-50 dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              <Image
+                src="/logos/github.svg"
+                alt="GitHub"
+                width={0}
+                height={100}
+                className="h-16 sm:h-20 lg:h-24 w-auto object-contain filter grayscale hover:grayscale-0 dark:invert transition-all duration-300"
+                style={{ width: 'auto', height: '70px' }}
+                priority
+              />
+            </motion.div>
+
+            {/* IBM */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={affiliatedInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.18 }}
+              whileHover={{
+                scale: 1.05,
+                filter: "brightness(1.1)",
+                boxShadow: "0 10px 25px rgba(0,0,0,0.1)"
+              }}
+              className="flex items-center justify-center h-20 sm:h-24 lg:h-28 p-4 sm:p-6 bg-gray-50 dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              <Image
+                src="/logos/ibm.svg"
+                alt="IBM"
+                width={160}
+                height={100}
+                className="w-auto h-auto max-h-20 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                 priority
               />
             </motion.div>
