@@ -96,7 +96,8 @@ export const TIMELINE_ENTRIES: TimelineEntry[] = [
     org: 'The Collective',
     role: 'Founding Fellow',
     detail: 'Founding fellow in a community of founders, operators, and investors partnering with Ramp, a16z/speedrun, MongoDB, Stripe, and AngelList.',
-    category: 'work'
+    category: 'work',
+    logo: '/logos/thecollective.svg'
   },
   {
     period: 'Jun 2025 – Aug 2025',
