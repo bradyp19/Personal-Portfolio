@@ -10,14 +10,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        canvas: '#0B0C0E',
-        surface: '#111317',
-        borderline: '#1E2026',
-        'borderline-light': '#2A2D36',
+        canvas: '#FAFAFA',
+        surface: '#FFFFFF',
+        borderline: '#E4E4E7',
+        'borderline-light': '#F4F4F5',
+        graphite: '#09090B',
       },
       fontFamily: {
-        serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
         sans: [
+          'var(--font-sans)',
+          'Inter',
           '-apple-system',
           'BlinkMacSystemFont',
           '"Segoe UI"',
@@ -27,6 +29,9 @@ module.exports = {
           'sans-serif',
         ],
         mono: [
+          'var(--font-mono)',
+          '"Geist Mono"',
+          '"JetBrains Mono"',
           'ui-monospace',
           'SFMono-Regular',
           'Menlo',

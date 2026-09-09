@@ -1,16 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #0B0C0E;
-  --foreground: #EAEAEA;
-  color-scheme: dark;
+  --background: #FAFAFA;
+  --foreground: #09090B;
+  color-scheme: light;
 }
 
 html {
-  background-color: #0B0C0E;
-  color: #EAEAEA;
+  background-color: #FAFAFA;
+  color: #09090B;
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -18,31 +20,31 @@ html {
 }
 
 body {
-  background-color: #0B0C0E;
-  color: #EAEAEA;
+  background-color: #FAFAFA;
+  color: #09090B;
   min-height: 100vh;
   overflow-x: hidden;
 }
 
 ::selection {
-  background-color: #27272A;
-  color: #FFFFFF;
+  background-color: #E4E4E7;
+  color: #09090B;
 }
 
-/* Minimal scrollbar */
+/* Minimal light scrollbar */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0B0C0E;
+  background: #FAFAFA;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1E2026;
-  border-radius: 2px;
+  background: #D4D4D8;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2A2D36;
+  background: #A1A1AA;
 }

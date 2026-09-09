@@ -27,13 +27,13 @@ export const PROFILE = {
   email: 'bradywpk211@gmail.com',
   github: 'https://github.com/bradyp19',
   linkedin: 'https://www.linkedin.com/in/brady-park-9ab3bb212/',
-  resume: '/resume.pdf',
+  resume: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/resume.pdf`,
   
   status: 'Incoming at GitHub & IBM · UVA Echols & QuestBridge Scholar',
 
   // Grounded, direct intro (Excetera / Vrathi style)
   intro:
-    "I'm a computer science student at the University of Virginia. I build systems, automated data pipelines, and developer tooling. Raised in a single-mother, low-income household, I came from nothing and learned early to build with whatever I had—starting with Scratch games at age 10 and eventually earning a full-ride QuestBridge scholarship to UVA.",
+    "I build systems, automated data pipelines, and developer tooling. Raised in a single-mother, low-income household, I came from nothing and learned early to build with whatever I had, starting with Scratch games at age 10 and eventually earning a full-ride QuestBridge scholarship to UVA.",
 
   story: [
     "Growing up with an autistic brother and no financial safety net, I learned to be resourceful and take responsibility early. I taught myself to program on Scratch when I was 10, hacking together games until they reached 70,000+ plays on the front page.",
@@ -50,8 +50,7 @@ export const PROJECTS: Project[] = [
     description:
       'A real-time vulnerability detection pipeline integrated with GitHub Actions and FastAPI. Scans pull request diffs using AST parsing and signature analysis to catch security flaws before production deployment. Analyzed ~1,000 code snippets per run with 97%+ accuracy.',
     tech: ['Python', 'FastAPI', 'GitHub Actions', 'Cloudflare Pages', 'React'],
-    github: 'https://github.com/asatpathy314/diff-sentry',
-    demo: 'https://diff-sentry.tech/'
+    github: 'https://github.com/bradyp19/diff-sentry'
   },
   {
     title: 'Market Intelligence Agent',
@@ -60,7 +59,7 @@ export const PROJECTS: Project[] = [
     description:
       'Built at Strategy (MicroStrategy) to eliminate manual competitor research. An automated Python scraper and NLP pipeline that ingests 500+ competitor reports weekly and outputs 40 concise markdown briefs directly to internal channels, cutting manual analysis effort by 90%.',
     tech: ['Python', 'Web Scraping', 'NLP', 'Pipelines', 'Markdown Synthesis'],
-    github: 'https://github.com/bradyp19/market-intelligence-agent'
+    github: 'https://github.com/bradyp19/Market-Intelligence-Repository'
   },
   {
     title: 'SunnyGlasses',
@@ -69,7 +68,7 @@ export const PROJECTS: Project[] = [
     description:
       'An accessibility tool translating American Sign Language into spoken voice in real time. Built at HooHacks using OpenCV for hand gesture tracking and a TensorFlow model trained on GCP. Achieved 98%+ accuracy on ~1,000 test samples and won 3rd place in the Accessibility Track.',
     tech: ['OpenCV', 'TensorFlow', 'Python', 'Google Cloud Platform'],
-    github: 'https://github.com/bradyp19/sunnyglasses'
+    github: 'https://github.com/bradyp19/SunnyGlasses'
   }
 ]
 
