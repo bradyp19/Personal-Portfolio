@@ -1,29 +1,38 @@
 import React from 'react'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
-import { Inter } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
-
 export const metadata: Metadata = {
-  title: 'Brady Park - Portfolio',
-  description: 'Product Strategy meets Technical Execution - Self-made immigrant turned full-ride Echols Scholar at UVA, building AI-driven and full-stack solutions that scale.',
-  keywords: ['Brady Park', 'Product Strategy', 'Full-Stack Developer', 'AI/ML', 'UVA', 'Echols Scholar', 'Portfolio'],
-  authors: [{ name: 'Brady Park' }],
-  creator: 'Brady Park',
+  title: 'Brady William Park — Systems & Product Strategy',
+  description:
+    'Full-stack systems, operational tooling, and technical product strategy. Echols & QuestBridge Scholar at the University of Virginia.',
+  keywords: [
+    'Brady Park',
+    'Brady William Park',
+    'Product Strategy',
+    'Full-Stack Developer',
+    'Systems Engineering',
+    'University of Virginia',
+    'QuestBridge Scholar',
+    'Echols Scholar',
+    'GitHub',
+    'IBM'
+  ],
+  authors: [{ name: 'Brady William Park' }],
+  creator: 'Brady William Park',
   openGraph: {
-    title: 'Brady Park - Portfolio',
-    description: 'Product Strategy meets Technical Execution',
+    title: 'Brady William Park — Systems & Product Strategy',
+    description: 'Full-stack systems and operational tooling. 0-to-1 builder.',
     url: 'https://bradypark.dev',
-    siteName: 'Brady Park Portfolio',
+    siteName: 'Brady William Park Portfolio',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Brady Park - Portfolio',
-    description: 'Product Strategy meets Technical Execution',
+    title: 'Brady William Park — Systems & Product Strategy',
+    description: 'Full-stack systems and operational tooling. 0-to-1 builder.',
   },
   robots: {
     index: true,
@@ -37,34 +46,13 @@ export default function RootLayout({
   children: ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="dark scroll-smooth">
       <head>
         <link rel="icon" href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/favicon.ico`} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#2563eb" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  var savedTheme = localStorage.getItem('theme');
-                  var systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  var shouldUseDark = savedTheme ? savedTheme === 'dark' : systemPrefersDark;
-                  
-                  if (shouldUseDark) {
-                    document.documentElement.classList.add('dark');
-                  } else {
-                    document.documentElement.classList.remove('dark');
-                  }
-                } catch (e) {
-                  // Fallback for SSR or if localStorage is not available
-                }
-              })();
-            `,
-          }}
-        />
+        <meta name="theme-color" content="#090a0c" />
       </head>
-      <body className={`${inter.className} antialiased`}>
+      <body className="bg-[#090A0C] text-[#EDEDED] font-sans antialiased">
         {children}
       </body>
     </html>
