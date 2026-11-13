@@ -69,7 +69,7 @@ export default function InteractiveTimeline() {
                   <motion.div
                     key={`${entry.org}-${entry.period}`}
                     layout
-                    initial={{ opacity: 0, y: 8 }}
+                    initial={false}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.98 }}
                     transition={{ duration: 0.25, delay: idx * 0.03 }}

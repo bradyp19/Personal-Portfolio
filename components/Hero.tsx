@@ -10,7 +10,7 @@ export default function Hero() {
     <section id="home" className="pt-20 pb-16 border-b border-zinc-200/80">
       <div className="max-w-4xl mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 14 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, ease: 'easeOut' }}
           className="flex flex-col-reverse md:flex-row md:items-start justify-between gap-8"

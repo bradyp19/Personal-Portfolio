@@ -22,7 +22,7 @@ export default function OperatorNote() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.35 }}
