@@ -37,7 +37,7 @@ export default function OperatorNote() {
           <div className="md:col-span-4">
             <div className="aspect-[4/5] rounded-xl overflow-hidden border border-zinc-200 bg-white shadow-xs relative max-w-[220px] group">
               <Image
-                src="/joelgrad.jpg"
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/joelgrad.jpg`}
                 alt="Brady Park"
                 fill
                 sizes="220px"

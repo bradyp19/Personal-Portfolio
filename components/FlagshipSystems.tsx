@@ -39,7 +39,6 @@ export default function FlagshipSystems() {
                     — {proj.subtitle}
                   </span>
                 </div>
-
               </div>
 
               <p className="text-sm text-zinc-600 leading-relaxed max-w-3xl mb-4">

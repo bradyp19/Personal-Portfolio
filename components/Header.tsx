@@ -32,14 +32,6 @@ export default function Header() {
           <Link href="#contact" className="hover:text-zinc-900 transition-colors hidden sm:inline-block">
             contact
           </Link>
-          <a
-            href={PROFILE.resume}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-zinc-900 font-medium border-b border-zinc-300 hover:border-zinc-900 pb-0.5 transition-colors"
-          >
-            resume
-          </a>
         </nav>
       </div>
     </header>

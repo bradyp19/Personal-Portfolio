@@ -69,15 +69,7 @@ export default function Footer() {
             >
               linkedin ↗
             </a>
-            <span className="text-zinc-300">/</span>
-            <a
-              href={PROFILE.resume}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-zinc-900 transition-colors"
-            >
-              resume (pdf) ↗
-            </a>
+
           </div>
 
           <div>

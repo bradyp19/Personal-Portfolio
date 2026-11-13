@@ -64,20 +64,13 @@ export default function Hero() {
               >
                 linkedin ↗
               </a>
-              <a
-                href={PROFILE.resume}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-3 py-1 rounded-md bg-zinc-900 text-white hover:bg-zinc-800 transition-colors shadow-xs"
-              >
-                resume (pdf) ↗
-              </a>
+
             </div>
           </div>
 
           <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border border-zinc-200 bg-white shadow-xs flex-shrink-0 relative group">
             <Image
-              src="/portrait.jpg"
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/portrait.jpg`}
               alt="Brady Park"
               fill
               priority

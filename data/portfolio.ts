@@ -26,7 +26,6 @@ export const PROFILE = {
   email: 'bradywpk211@gmail.com',
   github: 'https://github.com/bradyp19',
   linkedin: 'https://www.linkedin.com/in/brady-park-9a5469208/',
-  resume: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/resume.pdf`,
   
   status: 'Customer Success Engineer Intern at IBM · Previously GitHub · UVA QuestBridge Scholar',
 

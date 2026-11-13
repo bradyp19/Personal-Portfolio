@@ -95,7 +95,7 @@ export default function InteractiveTimeline() {
                           {entry.logo ? (
                             <div className="w-10 h-10 rounded-lg bg-white border border-zinc-200/80 p-1.5 shadow-xs flex items-center justify-center flex-shrink-0 group-hover:border-zinc-300 transition-colors">
                               <Image
-                                src={entry.logo}
+                                src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}${entry.logo}`}
                                 alt={entry.org}
                                 width={26}
                                 height={26}
