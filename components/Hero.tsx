@@ -21,7 +21,7 @@ export default function Hero() {
                 <span className="text-zinc-900 font-semibold">[00]</span>
                 <span>SYSTEMS & PRODUCT STRATEGY</span>
                 <span className="text-zinc-300">/</span>
-                <span>CHARLOTTESVILLE & NYC</span>
+                <span>{PROFILE.location}</span>
               </div>
 
               <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-zinc-900">
@@ -29,9 +29,13 @@ export default function Hero() {
               </h1>
 
               <p className="text-sm font-mono text-zinc-600">
-                CS @ University of Virginia · Incoming @ GitHub & IBM
+                {PROFILE.status}
               </p>
             </div>
+
+            <p className="text-sm text-zinc-600">
+              {PROFILE.school} · {PROFILE.degree}
+            </p>
 
             <p className="text-base text-zinc-600 leading-relaxed font-sans">
               {PROFILE.intro}

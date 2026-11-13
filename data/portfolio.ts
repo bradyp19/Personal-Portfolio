@@ -1,7 +1,6 @@
 export interface Project {
   title: string
   subtitle: string
-  year: string
   description: string
   tech: string[]
   github?: string
@@ -21,15 +20,15 @@ export interface TimelineEntry {
 export const PROFILE = {
   name: 'Brady Park',
   legalName: 'Brady William Park',
-  location: 'NYC / Charlottesville, VA',
+  location: 'Washington, D.C.',
   school: 'University of Virginia',
-  degree: 'B.A. Computer Science, 2027',
+  degree: 'B.A. Computer Science · May 2027 · GPA 3.8/4.0',
   email: 'bradywpk211@gmail.com',
   github: 'https://github.com/bradyp19',
-  linkedin: 'https://www.linkedin.com/in/brady-park-9ab3bb212/',
+  linkedin: 'https://www.linkedin.com/in/brady-park-9a5469208/',
   resume: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/resume.pdf`,
   
-  status: 'Incoming at GitHub & IBM · UVA Echols & QuestBridge Scholar',
+  status: 'Customer Success Engineer Intern at IBM · Previously GitHub · UVA QuestBridge Scholar',
 
   // Grounded, direct intro (Excetera / Vrathi style)
   intro:
@@ -38,37 +37,18 @@ export const PROFILE = {
   story: [
     "Growing up with an autistic brother and no financial safety net, I learned to be resourceful and take responsibility early. I taught myself to program on Scratch when I was 10, hacking together games until they reached 70,000+ plays on the front page.",
     "Winning a full-ride QuestBridge Match scholarship to UVA changed my trajectory. Today, I split my time between technical execution (writing scrapers, APIs, and ML models) and product strategy (translating user friction into technical roadmaps).",
-    "Outside of work, I play church pickup basketball, play electric guitar, watch Christopher Nolan movies, and play pickleball."
+    "Outside of work, I enjoy church pickup basketball, Christopher Nolan films, pickleball, electric guitar covers, following LeBron James, and drawing trees and skies."
   ]
 }
 
 export const PROJECTS: Project[] = [
   {
     title: 'DiffSentry',
-    subtitle: 'Automated CI/CD Vulnerability Scanner',
-    year: '2025',
+    subtitle: 'Git-diff analysis for CI checks',
     description:
-      'A real-time vulnerability detection pipeline integrated with GitHub Actions and FastAPI. Scans pull request diffs using AST parsing and signature analysis to catch security flaws before production deployment. Analyzed ~1,000 code snippets per run with 97%+ accuracy.',
-    tech: ['Python', 'FastAPI', 'GitHub Actions', 'Cloudflare Pages', 'React'],
+      'Built a FastAPI/Gemini pipeline analyzing Git diffs for CI pass/fail checks via GitHub Actions. Achieved 97%+ detection accuracy across approximately 1,000 snippets and placed 2nd overall at the GDG UVA showcase.',
+    tech: ['Python', 'FastAPI', 'Gemini', 'GitHub Actions'],
     github: 'https://github.com/bradyp19/diff-sentry'
-  },
-  {
-    title: 'Market Intelligence Agent',
-    subtitle: 'Automated Competitor Scraper & NLP Pipeline',
-    year: '2025',
-    description:
-      'Built at Strategy (MicroStrategy) to eliminate manual competitor research. An automated Python scraper and NLP pipeline that ingests 500+ competitor reports weekly and outputs 40 concise markdown briefs directly to internal channels, cutting manual analysis effort by 90%.',
-    tech: ['Python', 'Web Scraping', 'NLP', 'Pipelines', 'Markdown Synthesis'],
-    github: 'https://github.com/bradyp19/Market-Intelligence-Repository'
-  },
-  {
-    title: 'SunnyGlasses',
-    subtitle: 'Real-Time ASL to Speech Interpreter',
-    year: '2024',
-    description:
-      'An accessibility tool translating American Sign Language into spoken voice in real time. Built at HooHacks using OpenCV for hand gesture tracking and a TensorFlow model trained on GCP. Achieved 98%+ accuracy on ~1,000 test samples and won 3rd place in the Accessibility Track.',
-    tech: ['OpenCV', 'TensorFlow', 'Python', 'Google Cloud Platform'],
-    github: 'https://github.com/bradyp19/SunnyGlasses'
   }
 ]
 
@@ -76,8 +56,8 @@ export const TIMELINE_ENTRIES: TimelineEntry[] = [
   {
     period: 'Aug 2026 – Dec 2026',
     org: 'IBM',
-    role: 'Customer Success Engineer Co-Op',
-    detail: 'Joining the NYC Financial Markets team to help enterprise clients deploy IBM AI and data software using agentic tools and technical proof-of-concepts.',
+    role: 'Customer Success Engineer Internship',
+    detail: 'Built a BAMOE migration plugin using reusable conversion rules and Devin for assessment and validation, providing a starting point for agentic modernization at a large financial institution. Projected $5.3M in annual engineering-cost savings across a planned 128K-repository rollout. Cut hands-on migration assessment from 20 to 8 minutes; delivered an initial prototype in one week. Designed a retrieval-first context vault for IBM Bob with source-traceable context and a GUI prototype with user-governed updates.',
     category: 'work',
     logo: '/logos/ibm.svg'
   },
@@ -85,8 +65,8 @@ export const TIMELINE_ENTRIES: TimelineEntry[] = [
     period: 'May 2026 – Aug 2026',
     org: 'GitHub',
     role: 'Product Manager Intern',
-    detail: 'Core Migration Engine moving 200K+ repos/month. Defining FY27 roadmap from F500 user research, designing a checksum validation tool for top 100 enterprise clients, and prototyping agentic Copilot/MCP workflows that cut manual migration overhead by 75%.',
-    highlight: '200K+ repos/mo',
+    detail: 'Cut manual migration verification from 90 to 20 minutes with a Go parity-check engine spanning GitHub, GitLab, Azure DevOps, and Bitbucket, generating auditable JSON, Markdown, and HTML reports. Implemented 4 deterministic classifications, read-only reconciliation, explicit coverage status, and CI exit codes; tests passed across 9 Go packages. Built a RAG-powered agent harness for Go prototyping and test generation. Led 14 discovery sessions and authored 2 PRDs to support GitHub Enterprise and Copilot adoption.',
+    highlight: '90 → 20 min verification',
     category: 'work',
     logo: '/logos/github.svg'
   },
@@ -100,9 +80,9 @@ export const TIMELINE_ENTRIES: TimelineEntry[] = [
   },
   {
     period: 'Jun 2025 – Aug 2025',
-    org: 'Strategy (MicroStrategy)',
+    org: 'Strategy (NASDAQ: MSTR)',
     role: 'Sales Engineering Intern',
-    detail: 'Built an automated competitor intelligence scraper cutting team manual analysis by 90%. Independently architected a cross-region cloud POC with 99.9% projected availability.',
+    detail: 'Cut manual analysis 90% with an AI scraper turning 500+ weekly competitor reports into 40 insights. Designed a cloud proof of concept with cross-region failover and performance benchmarks.',
     highlight: '90% manual cut',
     category: 'work',
     logo: '/logos/strategy.svg'
@@ -117,9 +97,9 @@ export const TIMELINE_ENTRIES: TimelineEntry[] = [
   },
   {
     period: 'Jan 2025 – Dec 2025',
-    org: 'Technology Strategy Group',
+    org: 'Techne Strategy Group (UVA)',
     role: 'Director of Operations',
-    detail: 'Scaled project capacity 86% (7 to 13 clients/semester) by introducing Jira workflows for 50+ student consultants. Co-launched partnerships with Oracle and Palantir.',
+    detail: 'Scaled UVA’s largest tech consulting club from 7 to 13 projects per semester (86%) by leading outbound for Oracle, Palantir, and AfterQuery partnerships.',
     category: 'work',
     logo: '/logos/tsg.svg'
   },
@@ -127,7 +107,7 @@ export const TIMELINE_ENTRIES: TimelineEntry[] = [
     period: 'Jan 2025 – Apr 2025',
     org: 'GuidePoint Security',
     role: 'Security Engineering Intern',
-    detail: 'Built a 5+ VM security lab using Kubernetes and Docker. Automated Bash log ingestion pipelines handling 50k+ daily logs with 30% lower delivery latency.',
+    detail: 'Reduced SOC setup time 40% using infrastructure as code, Kubernetes, Docker, and 5+ virtual machines. Automated logging for 50K+ daily logs with Bash, reducing delivery latency from about 10 to 6 seconds.',
     category: 'work',
     logo: '/logos/guidepoint.png'
   },
@@ -179,18 +159,18 @@ export const TIMELINE_ENTRIES: TimelineEntry[] = [
 export const SKILL_GROUPS = [
   {
     name: 'Languages',
-    skills: ['Python', 'TypeScript', 'Java', 'C/C++', 'SQL', 'Bash']
+    skills: ['Python', 'SQL', 'Java', 'C/C++']
   },
   {
-    name: 'Pipelines & Automation',
-    skills: ['Playwright', 'GitHub Actions', 'FastAPI', 'MCP / Agents', 'Web Scraping']
+    name: 'Web & Cloud',
+    skills: ['React', 'Node.js', 'AWS']
   },
   {
-    name: 'Infrastructure & Security',
-    skills: ['Docker', 'Kubernetes', 'AWS', 'SIEM / Logging', 'CI/CD']
+    name: 'AI',
+    skills: ['Agentic AI', 'LangChain', 'Transformers']
   },
   {
-    name: 'Product & Execution',
-    skills: ['Technical PRDs', 'User Discovery', 'Jira / Sprints', 'POC Benchmarks']
+    name: 'Certifications',
+    skills: ['AWS Cloud Practitioner (UVA AWS Bootcamp)', 'Strategy Enterprise Analyst']
   }
 ]

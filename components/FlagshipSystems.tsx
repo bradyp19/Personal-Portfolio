@@ -39,9 +39,7 @@ export default function FlagshipSystems() {
                     — {proj.subtitle}
                   </span>
                 </div>
-                <span className="text-xs font-mono text-zinc-500 self-start sm:self-auto bg-zinc-100 px-2 py-0.5 rounded border border-zinc-200/60">
-                  {proj.year}
-                </span>
+
               </div>
 
               <p className="text-sm text-zinc-600 leading-relaxed max-w-3xl mb-4">
