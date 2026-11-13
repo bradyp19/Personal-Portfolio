@@ -18,7 +18,6 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          'var(--font-sans)',
           'Inter',
           '-apple-system',
           'BlinkMacSystemFont',
@@ -29,7 +28,6 @@ module.exports = {
           'sans-serif',
         ],
         mono: [
-          'var(--font-mono)',
           '"Geist Mono"',
           '"JetBrains Mono"',
           'ui-monospace',
