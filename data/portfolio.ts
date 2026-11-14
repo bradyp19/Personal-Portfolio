@@ -31,7 +31,7 @@ export const PROFILE = {
 
   // Grounded, direct intro (Excetera / Vrathi style)
   intro:
-    "I build systems, automated data pipelines, and developer tooling. Raised in a single-mother, low-income household, I came from nothing and learned early to build with whatever I had, starting with Scratch games at age 10 and eventually earning a full-ride QuestBridge scholarship to UVA.",
+    "I build systems, automated data pipelines, and developer tooling. Raised in a single-mother, low-income household, I started with Scratch games at age 10 and eventually earning a full-ride QuestBridge scholarship to UVA.",
 
   story: [
     "Growing up with an autistic brother and no financial safety net, I learned to be resourceful and take responsibility early. I taught myself to program on Scratch when I was 10, hacking together games until they reached 70,000+ plays on the front page.",
