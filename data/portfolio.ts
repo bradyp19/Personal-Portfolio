@@ -34,8 +34,8 @@ export const PROFILE = {
     "I build systems, automated data pipelines, and developer tooling. Raised in a single-mother, low-income household, I started with Scratch games at age 10 and eventually earning a full-ride QuestBridge scholarship to UVA.",
 
   story: [
-    "I enjoy working across engineering and product: understanding where people get stuck, then building tools that make their work easier. My work spans developer tooling, automation, and AI-assisted workflows.",
-    "Away from my laptop, you’ll find me playing pickup basketball at church or pickleball, learning electric guitar covers, or drawing trees and skies. I’m also a Christopher Nolan fan and always happy to talk about LeBron."
+    "I build tools that make work easier, combining engineering and product thinking.",
+    "Outside work: basketball, pickleball, guitar covers, sketching, Nolan films, and LeBron."
   ]
 }
 
